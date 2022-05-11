@@ -8,14 +8,14 @@ Simply clone this repository and make a branch. This project follows a Pull Requ
 
 ## Adding a Collectie
 
-1. Start by creating a test class for your new species under `org.collectiespink.collectie.species` under the test root.
+1. Start by creating a test class for your new species under `com.galvanize.collecties.collectie.species` under the test root.
 2. Use the existing species tests as a guide to create your test suite, and by extension, your new species. Keep in the mind the following as you work on your species:
-    * You species class (not your test class) will go in `org.collectiespink.collectie.species` under the source root.
+    * You species class (not your test class) will go in `com.galvanize.collecties.collectie.species` under the source root.
     * Your class should `extend Collectie`, the abstract base class of all species. This ensures your species has all the methods it needs.
     * Your constructor should **NEVER** take any arguments. The application will not work with your species otherwise.
     * Make sure you test and implement **ALL** the required methods, including clone. The example test suites can help as a double check.
 3. Once you feel your tests and species is complete, you have to add your species to the master list for it to be available during gameplay. To do this:
-    1. open the `CollectieSpecies` enum under `org.collectiespink.collectie.species`.
+    1. open the `CollectieSpecies` enum under `com.galvanize.collecties.collectie.species`.
     2. Use the current entries and comments to guide you through adding your species to the enum. You will be adding **ONE LINE** to this file.
 4. With your species tested and added to the master list, you should be able to run the game and have it show up in the wild!
 
@@ -23,9 +23,9 @@ Simply clone this repository and make a branch. This project follows a Pull Requ
 
 Follow the same steps outlined for adding a new collectie species, with the following differences:
 
-* Consumables are part of the `org.collectiespink.consumable` package, both under the source and test root.
+* Consumables are part of the `com.galvanize.collecties.consumable` package, both under the source and test root.
 * Instead of extending `Collectie`, your consumable needs to `implement consumable`, which is an interface.
-* The master list of consumables is the `Consumables` enum found under `org.collectiespink.consumable`. You will be adding **ONE LINE** to this file.
+* The master list of consumables is the `Consumables` enum found under `com.galvanize.collecties.consumable`. You will be adding **ONE LINE** to this file.
 
 ## Advanced Tickets
 
@@ -39,7 +39,7 @@ If you work on any of these, make sure you continuously keep in mind code organi
 1. In the `Encounter` logic, add in a chance (50%? 75%? up to you) that the opponent will get an "attack of opportunity" when the player runs from an encounter.
 
 ### Knocked-Out Status
-1. Create a new enum called `CollectieStatus` inside the `org.collectiespink.collectie` package. There should be two statuses, one for conscious and one for unconscious. The name of enum elements are up to you, as long as there are two statuses.
+1. Create a new enum called `CollectieStatus` inside the `com.galvanize.collecties.collectie` package. There should be two statuses, one for conscious and one for unconscious. The name of enum elements are up to you, as long as there are two statuses.
 2. Once created, add a field to the `Collectie` base class called `status`. The initial value should conscious.
 3. Don't forget getters and setters.
 4. When a protector is defeated in battle, set their status to unconscious. Hint: this will be done in the `Encounter` class, not the `Game` class.
