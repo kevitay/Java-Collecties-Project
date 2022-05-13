@@ -6,7 +6,7 @@ Welcome to the world of collecties, where you explore and collect little animals
 
 Simply clone this repository and make a branch. This project follows a Pull Request workflow so make sure you are **ALWAYS** working on a branch.
 
-If you want to **play** the game, run the `main()` method on the `Game` class. This is a terminal game so you will be play via prompts in the terminal.
+If you want to **play** the game, run the `main()` method on the `Game` class. This is a terminal game so you will be interacting via prompts in the terminal.
 
 ## Adding a Collectie
 
