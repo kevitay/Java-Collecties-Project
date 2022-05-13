@@ -9,10 +9,12 @@ Simply clone this repository and make a branch. This project follows a Pull Requ
 ## Adding a Collectie
 
 1. Start by creating a test class for your new species under `com.galvanize.collecties.collectie.species` under the test root.
-2. Use the existing species tests as a guide to create your test suite, and by extension, your new species. Keep in the mind the following as you work on your species:
+2. Use the existing species tests and classes as a guide to create your test suite, and by extension, your new species. Keep in the mind the following as you work on your species:
     * You species class (not your test class) will go in `com.galvanize.collecties.collectie.species` under the source root.
     * Your class should `extend Collectie`, the abstract base class of all species. This ensures your species has all the methods it needs.
-    * Your constructor should **NEVER** take any arguments. The application will not work with your species otherwise.
+    * Your constructor (you will need to one) should **NEVER** take any arguments. The application will not work with your species otherwise.
+    * Feel free to create a new collectie type. Simply add a new entry to the `CollectieType` enum found under `com.galvanize.collecties.collectie`.
+    * For your graphic, make sure you escape all `\` and `"` characters. In your graphic string(s) these characters will be represented by `\\` and `\"` respectively.
     * Make sure you test and implement **ALL** the required methods, including clone. The example test suites can help as a double check.
 3. Once you feel your tests and species is complete, you have to add your species to the master list for it to be available during gameplay. To do this:
     1. open the `CollectieSpecies` enum under `com.galvanize.collecties.collectie.species`.
