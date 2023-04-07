@@ -5,9 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.PrintStream;
+import java.io.*;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.*;
@@ -15,17 +13,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Printer")
 public class PrinterTests {
-
+  PrintStream printStream;
+  ByteArrayOutputStream outputStream;
   /*
    * Sets up System.out to use a controlled byte stream
    * that can be used to capture what is printed using
    * system.out methods.
    */
   public ByteArrayOutputStream setupStandardOut() {
-    ByteArrayOutputStream bs = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(bs));
-
-    return bs;
+    return this.outputStream;
   }
 
   /*
@@ -33,22 +29,17 @@ public class PrinterTests {
    * written to it.
    */
   public String flushOutputStream(ByteArrayOutputStream bs) {
-    try {
-      bs.flush();
-    } catch (IOException e) {
-      System.err.println(e.getMessage());
-      return "";
-    }
-
-    return bs.toString();
+    return this.outputStream.toString();
   }
 
   Printer printer;
 
   @BeforeEach
   public void setupTest() {
+    this.outputStream = new ByteArrayOutputStream();
+    this.printStream = new PrintStream(this.outputStream);
 
-    printer = new Printer();
+    printer = new Printer(printStream);
   }
 
   @Test
@@ -281,7 +272,6 @@ public class PrinterTests {
     ByteArrayOutputStream bs = setupStandardOut();
     long startTime = System.currentTimeMillis();
 
-    Printer printer = new Printer();
     printer.disableSleep();
     printer.wait(10, "TEST_MODE");
 
