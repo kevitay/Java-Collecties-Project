@@ -15,22 +15,6 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PrinterTests {
   PrintStream printStream;
   ByteArrayOutputStream outputStream;
-  /*
-   * Sets up System.out to use a controlled byte stream
-   * that can be used to capture what is printed using
-   * system.out methods.
-   */
-  public ByteArrayOutputStream setupStandardOut() {
-    return this.outputStream;
-  }
-
-  /*
-   * Flush the given output stream and return the text
-   * written to it.
-   */
-  public String flushOutputStream(ByteArrayOutputStream bs) {
-    return this.outputStream.toString();
-  }
 
   Printer printer;
 
@@ -124,11 +108,9 @@ public class PrinterTests {
     String expected = "[1] " + testList[0] + "%n" +
       "[2] " + testList[1] + "%n";
 
-    ByteArrayOutputStream bs = setupStandardOut();
-
     printer.formatAsList(testList).print();
 
-    String printed = flushOutputStream(bs);
+    String printed = this.outputStream.toString();
     assertEquals(String.format(expected), printed);
   }
 
@@ -182,11 +164,10 @@ public class PrinterTests {
   @Test
   public void shouldPrintToSystemOut() {
     String expected = "This should be printed to System.out";
-    ByteArrayOutputStream bs = setupStandardOut();
 
     printer.print(expected);
 
-    String printed = flushOutputStream(bs);
+    String printed = this.outputStream.toString();
     assertEquals(String.format(expected + "%n"), printed);
   }
 
@@ -194,11 +175,10 @@ public class PrinterTests {
   public void shouldAllowBufferedPrinting() {
     String expected = "This should be printed to %s";
     String replacement = "System.out";
-    ByteArrayOutputStream bs = setupStandardOut();
 
     printer.multiline(expected).print(replacement);
 
-    String printed = flushOutputStream(bs);
+    String printed = this.outputStream.toString();
     assertEquals(
       String.format(expected + "%n", replacement),
       printed);
@@ -207,21 +187,17 @@ public class PrinterTests {
   @Test
   public void shouldSupportNoReplacementBufferPrints() {
     String expected = "This is some text!";
-    ByteArrayOutputStream bs = setupStandardOut();
 
     printer.multiline(expected).print();
 
-    String printed = flushOutputStream(bs);
+    String printed = this.outputStream.toString();
     assertEquals(String.format(expected + "%n"), printed);
   }
 
   @Test
   public void shouldHaveClearBufferAfterPrint() {
-    ByteArrayOutputStream bs = setupStandardOut();
-
     printer.multiline("Something").print();
 
-    flushOutputStream(bs);
     assertEquals("", printer.getBuffer());
   }
 
@@ -231,13 +207,11 @@ public class PrinterTests {
     String line2 = "%s line!";
     Object[] replacements = { "First", "Second" };
 
-    ByteArrayOutputStream bs = setupStandardOut();
-
     printer
       .multiline(line1, line2)
       .print((String) replacements[0], replacements[1]);
 
-    String printed = flushOutputStream(bs);
+    String printed = this.outputStream.toString();
     assertEquals(
       String.format(line1 + "%n" + line2 + "%n", replacements),
       printed);
@@ -245,12 +219,11 @@ public class PrinterTests {
 
   @Test
   public void shouldSupportWaitDots() {
-    ByteArrayOutputStream bs = setupStandardOut();
     long startTime = System.currentTimeMillis();
 
     printer.wait(2, "Wait Test");
 
-    String printed = flushOutputStream(bs);
+    String printed = this.outputStream.toString();
     assertEquals(String.format("Wait Test..%n"), printed);
 
     long timeDiff = System.currentTimeMillis() - startTime;
@@ -259,23 +232,20 @@ public class PrinterTests {
 
   @Test
   public void shouldBeAbleToChainWait() {
-    ByteArrayOutputStream bs = setupStandardOut();
-
     printer.multiline("Test").wait(2);
 
-    String printed = flushOutputStream(bs);
+    String printed = this.outputStream.toString();
     assertEquals(String.format("Test..%n"), printed);
   }
 
   @Test
   public void shouldNotWaitWhenInTestMode() {
-    ByteArrayOutputStream bs = setupStandardOut();
     long startTime = System.currentTimeMillis();
 
     printer.disableSleep();
     printer.wait(10, "TEST_MODE");
 
-    String printed = flushOutputStream(bs);
+    String printed = this.outputStream.toString();
     assertEquals(
       String.format("TEST_MODE..........%n"),
       printed);
@@ -286,22 +256,18 @@ public class PrinterTests {
 
   @Test
   public void shouldSupportSameLinePrinting() {
-    ByteArrayOutputStream bs = setupStandardOut();
-
     printer.inline().print("Test");
 
-    String printed = flushOutputStream(bs);
+    String printed = this.outputStream.toString();
     assertEquals("Test", printed);
   }
 
   @Test
   public void shouldClearTheInlineFlagAfterPrinting() {
-    ByteArrayOutputStream bs = setupStandardOut();
-
     printer.inline().print("Test");
     printer.print(" Test 2!");
 
-    String printed = flushOutputStream(bs);
+    String printed = this.outputStream.toString();
     assertEquals(
       String.format("Test Test 2!%n"),
       printed);
