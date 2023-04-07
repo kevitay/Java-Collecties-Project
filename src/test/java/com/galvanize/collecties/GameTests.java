@@ -12,7 +12,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import static com.galvanize.collecties.GameHelper.runGameWithInput;
+import static com.galvanize.collecties.GameHelper.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertLinesMatch;
 
 public class GameTests {
 
@@ -25,7 +27,8 @@ public class GameTests {
         String input = "n\n4\n";
         String output = runGameWithInput(input);
         System.out.println(output);
-        Assertions.assertTrue(output.toString().contains("Thank you for playing!"));
+        displayOutputLines(output);
+        Assertions.assertEquals("?: Thank you for playing!", output.split("\n")[13]);
     }
 
     @Test

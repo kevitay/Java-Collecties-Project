@@ -32,4 +32,18 @@ public class GameHelper {
         game.start();
         return outputStream.toString();
     }
+
+
+    public static void displayOutputLines(String output) {
+        displayOutputLines(output.split("\n"));
+    }
+
+    public static void displayOutputLines(String[] output) {
+        Integer index = 0;
+        for (String line :
+                output) {
+            System.out.println(String.format("%3d: %s", index, line));
+            index++;
+        }
+    }
 }
