@@ -47,10 +47,16 @@ public class GameTests {
     }
 
     @Test
-    public void canRenameCollectie2() {
+    public void canRenameCollectieNotHappyWithName() {
         String output = runGameWithInput("n", "3", "4", "1", "Rexter", "n", "Rexy", "y", "1", "6", "4");
         displayOutputLines(output);
         Assertions.assertEquals("[1] Rexy (Rextore)", output.split("\n")[37]);
     }
 
+    @Test
+    public void attemptToFeedCollectieWithNoConsumables() {
+        String output = runGameWithInput("y", "Rextor", "y", "3", "3", "1", "6", "4");
+        displayOutputLines(output);
+        Assertions.assertEquals("?: You have no consumables to feed Rextor!", output.split("\n")[26]);
+    }
 }
