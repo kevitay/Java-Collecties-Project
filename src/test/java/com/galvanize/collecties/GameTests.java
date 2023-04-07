@@ -38,4 +38,19 @@ public class GameTests {
         System.out.println(output);
         Assertions.assertTrue(output.contains("No consumables available"));
     }
+
+    @Test
+    public void canRenameCollectie() {
+        String output = runGameWithInput("n", "3", "4", "1", "Rexter", "y", "1", "6", "4");
+        displayOutputLines(output);
+        Assertions.assertEquals("[1] Rexter (Rextore)", output.split("\n")[34]);
+    }
+
+    @Test
+    public void canRenameCollectie2() {
+        String output = runGameWithInput("n", "3", "4", "1", "Rexter", "n", "Rexy", "y", "1", "6", "4");
+        displayOutputLines(output);
+        Assertions.assertEquals("[1] Rexy (Rextore)", output.split("\n")[37]);
+    }
+
 }
