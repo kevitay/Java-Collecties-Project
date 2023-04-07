@@ -44,6 +44,7 @@ public class Game {
     "Manage Collection",
     "Exit"
   };
+  private boolean exitGame;
 
   // MAIN METHOD!
   public static void main(String[] args) {
@@ -157,16 +158,19 @@ public class Game {
       // but it is still good to have this be a backup
       // just in case we EVER get an unexpected input somehow
       default:
+        this.exitGame = true;
         printer.print("Thank you for playing!");
 
         // This literally ends the execution of the program
         // Anything other than 0 would be a non-OK exit
-        System.exit(0);
+        break;
+//        System.exit(0);
     }
 
     // Recursive loop of the method so you get the menu
     // after every event until you exit this main menu
-    gotoMainMenu();
+    if(!exitGame)
+      gotoMainMenu();
   }
 
   /*

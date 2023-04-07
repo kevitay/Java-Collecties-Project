@@ -3,6 +3,7 @@ package com.galvanize.collecties.utils.terminal;
 import com.diogonunes.jcolor.Ansi;
 import com.diogonunes.jcolor.Attribute;
 
+import java.io.PrintStream;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -42,6 +43,7 @@ public class Printer {
    * the cached array is used instead of creating a new one.
    */
   private final Map<String, Attribute[]> attributesCache = new HashMap<>();
+  private final PrintStream out;
 
   /*
    * Flag to determine if the buffer should be printed with
@@ -61,6 +63,13 @@ public class Printer {
    * some method to make using the printer cleaner.
    */
   private String buffer = "";
+
+  public Printer() {
+    this(System.out);
+  }
+  public Printer(PrintStream printStream) {
+    this.out = printStream;
+  }
 
   public String getBuffer() {
     return buffer;
@@ -218,11 +227,11 @@ public class Printer {
     }
 
     if(!inline) {
-      System.out.println(
+      out.println(
         format(stringToPrint, replacements)
           .getBuffer());
     } else {
-      System.out.print(
+      out.print(
         format(stringToPrint, replacements)
           .getBuffer());
 

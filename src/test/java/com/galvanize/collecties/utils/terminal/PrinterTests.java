@@ -47,6 +47,7 @@ public class PrinterTests {
 
   @BeforeEach
   public void setupTest() {
+
     printer = new Printer();
   }
 
