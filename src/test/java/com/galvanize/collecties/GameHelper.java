@@ -9,9 +9,20 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class GameHelper {
+    private static boolean testMode = false;
+
+    public static void disableGameSleep() {
+        testMode = true;
+    }
+
+    public static void enableGameSleep() {
+        testMode = false;
+    }
+
     public static String runGameWithInput(String ...input) {
         return runGameWithInput(String.join("\n", input));
     }
@@ -29,6 +40,9 @@ public class GameHelper {
         Scanner scanner = new Scanner(inputStream);
         Prompt prompt = new Prompt(scanner, printer);
         Game game = new Game(printer, prompt);
+        if(testMode) {
+            printer.disableSleep();
+        }
         game.start();
         return outputStream.toString();
     }

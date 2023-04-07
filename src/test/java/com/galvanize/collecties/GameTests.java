@@ -7,14 +7,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import static com.galvanize.collecties.GameHelper.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertLinesMatch;
 
 public class GameTests {
 
@@ -25,6 +20,7 @@ public class GameTests {
     @Test
     public void canExitGame() throws IOException {
         String input = "n\n4\n";
+        disableGameSleep();
         String output = runGameWithInput(input);
         System.out.println(output);
         displayOutputLines(output);
