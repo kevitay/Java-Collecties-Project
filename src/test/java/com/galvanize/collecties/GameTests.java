@@ -1,12 +1,9 @@
 package com.galvanize.collecties;
 
-import com.galvanize.collecties.utils.terminal.Printer;
-import com.galvanize.collecties.utils.terminal.Prompt;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.*;
 import java.util.*;
 
 import static com.galvanize.collecties.GameHelper.*;
@@ -18,7 +15,7 @@ public class GameTests {
     }
 
     @Test
-    public void canExitGame() throws IOException {
+    public void canExitGame() {
         String input = "n\n4\n";
         disableGameSleep();
         String output = runGameWithInput(input);
@@ -30,7 +27,6 @@ public class GameTests {
     @Test
     public void showCollectionThenExit() {
         List<String> gameInput = new ArrayList<>(Arrays.asList("n", "3", "1", "6", "4"));
-//        String input = "n\n3\n1\n6\n4\n";
         String output = runGameWithInput(gameInput);
         System.out.println(output);
         Assertions.assertTrue(output.contains("Collectie Collection"));
