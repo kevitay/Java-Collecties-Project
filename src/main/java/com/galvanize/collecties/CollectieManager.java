@@ -160,6 +160,9 @@ public class CollectieManager {
    * the choices
    */
   private void printConsumableChoices() {
+    if(consumables.size() < 1) {
+      printer.print("No consumables available");
+    }
     printer.formatAsList(
       consumables
         .stream()

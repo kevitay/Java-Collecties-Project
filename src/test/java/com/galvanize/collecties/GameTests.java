@@ -26,9 +26,14 @@ public class GameTests {
 //        System.setIn(this.inputStream);
     }
 
+    public void runGameWithInput(String ...input) {
+        runGameWithInput(String.join("\n", input));
+    }
+
     public void runGameWithInput(List<String> inputList) {
         runGameWithInput(String.join("\n", inputList));
     }
+
     public void runGameWithInput(String input) {
         this.inputStream = new ByteArrayInputStream(input.getBytes());
         Printer printer = new Printer(this.printStream);
@@ -55,25 +60,10 @@ public class GameTests {
         Assertions.assertTrue(outputStream.toString().contains("Collectie Collection"));
     }
 
-    public ByteArrayOutputStream setupStandardOut() {
-        ByteArrayOutputStream bs = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(bs));
-
-        return bs;
-    }
-
-    /*
-     * Flush the given output stream and return the text
-     * written to it.
-     */
-    public String flushOutputStream(ByteArrayOutputStream bs) {
-        try {
-            bs.flush();
-        } catch (IOException e) {
-            System.err.println(e.getMessage());
-            return "";
-        }
-
-        return bs.toString();
+    @Test
+    public void showNoConsumablesOnGameStartThenExit() {
+        runGameWithInput("n", "3", "2", "6", "4");
+        System.out.println(outputStream);
+        Assertions.assertTrue(outputStream.toString().contains("No consumables available"));
     }
 }
