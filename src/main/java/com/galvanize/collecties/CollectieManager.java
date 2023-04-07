@@ -142,6 +142,7 @@ public class CollectieManager {
     for(int i = 0; i < collection.size(); i++) {
       Collectie c = collection.get(i);
 
+      printer.print("Collectie Collection");
       printer.print(
         "[%d] %s (%s)",
         i + 1,
