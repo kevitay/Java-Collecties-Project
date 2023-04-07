@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Printer")
 public class PrinterTests {
-  PrintStream printStream;
   ByteArrayOutputStream outputStream;
 
   Printer printer;
@@ -21,9 +20,7 @@ public class PrinterTests {
   @BeforeEach
   public void setupTest() {
     this.outputStream = new ByteArrayOutputStream();
-    this.printStream = new PrintStream(this.outputStream);
-
-    printer = new Printer(printStream);
+    printer = new Printer(new PrintStream(this.outputStream));
   }
 
   @Test
