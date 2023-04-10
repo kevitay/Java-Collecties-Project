@@ -16,11 +16,15 @@ public class TriceratopsTests {
         tops = new Triceratops();
     }
 
-@Test
+    @Test
     public void shouldBeAbleToRename() {
         String newName = "Tritops";
         tops.setName(newName);
         assertEquals(newName, tops.getName());
-}
+    }
 
+    @Test
+    public void shouldBeTriceratopsSpecies() {
+        assertEquals("Triceratops", tops.getSpecies());
+    }
 }
