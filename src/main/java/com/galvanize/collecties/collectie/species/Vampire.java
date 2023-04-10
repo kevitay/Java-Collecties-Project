@@ -38,7 +38,7 @@ public class Vampire extends Collectie {
 
     @Override
     public int performAttack() {
-        return 0;
+        return 8;
     }
 
     @Override

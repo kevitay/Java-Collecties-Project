@@ -38,9 +38,12 @@ public class VampireTests {
         Assertions.assertEquals(Biome.MOUNTAIN_RANGE, testVampire.getPreferredBiome());
     }
 
-    //public void shouldHave__AttackPower (){}
+    @Test
+    public void shouldHave8AttackPower (){
+        Assertions.assertEquals(8, testVampire.performAttack());
+    }
 
-    //public void shouldSuccessfullyDefend__pOfTheTime (){}
+    //public void shouldSuccessfullyDefend80pOfTheTime (){}
 
     //public void shouldNewVampireOnClone(){}
 
