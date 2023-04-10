@@ -9,6 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @DisplayName("Collectie: Gengar")
 public class GengarTests {
@@ -33,6 +34,13 @@ public class GengarTests {
     @Test
     public void shouldBeTypeGhost() {
         Assertions.assertEquals(CollectieType.GHOST, gengar.getType());
+    }
+
+    @Test
+    public void shouldProvideAGraphic() {
+        String graphic = gengar.getGraphic();
+        System.out.println(graphic);
+        assertNotEquals(0, graphic.length());
     }
 
 
