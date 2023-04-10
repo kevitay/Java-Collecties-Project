@@ -1,5 +1,6 @@
 package com.galvanize.collecties.collectie.species;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -23,4 +24,24 @@ public class VampireTests {
         //assessment
         Assertions.assertEquals(newName, testVampire.getName());
     }
+
+    //public void shouldBeVampireSpecies (){}
+
+    //public void shouldBeTypeSPECIAL (){}
+
+    //public void shouldProvideAGraphic() {}
+
+    //public void shouldHaveTheCorrectSound(){}
+
+    @Test
+    public void shouldPreferMountainBiome (){
+        Assertions.assertEquals(Biome.MOUNTAIN_RANGE, testVampire.getPreferredBiome());
+    }
+
+    //public void shouldHave__AttackPower (){}
+
+    //public void shouldSuccessfullyDefend__pOfTheTime (){}
+
+    //public void shouldNewVampireOnClone(){}
+
 }
