@@ -31,12 +31,17 @@ public class StanTests {
     public void shouldReturnGraphic() {
         String graphic = stan.getGraphic();
         System.out.println(graphic);
-        assertNotEquals(0, stan.getGraphic().length());
+        assertNotEquals(0, graphic.length());
     }
 
     @Test
     public void shouldReturnPreferredBiome() {
         assertEquals(Biome.MOUNTAIN_RANGE, stan.getPreferredBiome());
+    }
+
+    @Test
+    public void shouldHave12AttackPower() {
+        assertEquals(12, stan.performAttack());
     }
 }
 

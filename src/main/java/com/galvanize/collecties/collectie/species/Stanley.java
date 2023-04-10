@@ -46,7 +46,7 @@ public class Stanley extends Collectie {
 
     @Override
     public int performAttack() {
-        return 0;
+        return 12;
     }
 
     @Override
