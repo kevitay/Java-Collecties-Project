@@ -16,9 +16,23 @@ public enum Consumables {
   // a reference instance of the class
   // it represents
   // CONSUMABLE(new Consumable()) / KEY(VALUE)
+  QUESTIONABLE_MUSHROOM(new QuestionableMushroom()),
   ENERGY_DRINK(new EnergyDrink()),
   PIZZA(new Pizza()),
-  COFFEE_DRINK(new CoffeeDrink());
+
+  COFFEE_DRINK(new CoffeeDrink()),
+
+  KONA_COFFEE(new KonaCoffee()),
+  ANABOLICSTEROIDS(new AnabolicSteroids()),
+  PHOENIXWING(new PhoenixWing()),
+  NIBBLETS(new Nibblets()),
+
+  BANANAS(new Bananas()),
+
+  SPINACH(new Spinach());
+
+
+
 
   // Create a static array of all the Consumables
   private static final Consumables[] consumablesArray = Consumables.values();
