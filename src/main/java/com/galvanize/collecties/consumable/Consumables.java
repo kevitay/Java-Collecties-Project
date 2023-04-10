@@ -19,8 +19,10 @@ public enum Consumables {
   QUESTIONABLE_MUSHROOM(new QuestionableMushroom()),
   ENERGY_DRINK(new EnergyDrink()),
   PIZZA(new Pizza()),
-  NIBBLETS(new Nibblets()),
-  BANANAS(new Bananas());
+  BANANAS(new Bananas()),
+  ANABOLICSTEROIDS(new AnabolicSteroids()),
+  PHOENIXWING(new PhoenixWing()),
+  NIBBLETS(new Nibblets());
 
   // Create a static array of all the Consumables
   private static final Consumables[] consumablesArray = Consumables.values();
