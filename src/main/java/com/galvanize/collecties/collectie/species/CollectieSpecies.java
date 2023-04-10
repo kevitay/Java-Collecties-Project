@@ -16,7 +16,8 @@ public enum CollectieSpecies {
   // it represents
   // SPECIES(new Species()) / KEY(ReferenceValue)
   REXTORE(new Rextore()),
-  DODUD(new Dodud());
+  DODUD(new Dodud()),
+  Stanley(new Stanley());
 
 
   /*

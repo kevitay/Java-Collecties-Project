@@ -4,12 +4,11 @@ import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junitpioneer.jupiter.StdOut;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Collectie: Stanley")
-public class StanTests {
+@DisplayName("Collectie: SouthPark")
+public class StanleyTests {
 
     Stanley stan;
 
@@ -57,6 +56,11 @@ public class StanTests {
     public void shouldCloneNewStanley() {
         Stanley clone = stan.clone();
         assertNotEquals(clone, stan);
+    }
+
+    @Test
+    public void shouldGetSpecies() {
+        assertEquals("Stanley", stan.getSpecies());
     }
 }
 
