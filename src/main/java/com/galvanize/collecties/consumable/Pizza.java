@@ -2,7 +2,7 @@ package com.galvanize.collecties.consumable;
 
 public class Pizza implements Consumable {
 
-  private int slices = 4;
+  private int slices = 3;
 
   @Override
   public String getName() {
