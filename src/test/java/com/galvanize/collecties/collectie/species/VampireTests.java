@@ -36,7 +36,11 @@ public class VampireTests {
         Assertions.assertEquals(CollectieType.SPECIAL, testVampire.getType());
     }
 
-    //public void shouldProvideAGraphic() {}
+    @Test
+    public void shouldProvideAGraphic() {
+         Assertions.assertNotEquals(0, testVampire.getGraphic().length());
+    }
+
     @Test
     public void shouldHaveTheCorrectSound(){
         String shout = "I WANT TO SUCK YOUR BLOOD";
