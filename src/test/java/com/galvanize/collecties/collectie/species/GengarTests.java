@@ -48,6 +48,12 @@ public class GengarTests {
         assertEquals("SSSSWWWSHHHSSSSSHHH", gengar.speak());
     }
 
+    @Test
+    public void shouldPreferBogBiomes() {
+        assertEquals(Biome.BOG, gengar.getPreferredBiome());
+    }
+
+
 
 
 }

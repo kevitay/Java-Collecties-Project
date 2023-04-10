@@ -44,7 +44,7 @@ public class Gengar extends Collectie {
 
     @Override
     public Biome getPreferredBiome() {
-        return null;
+        return Biome.BOG;
     }
 
     @Override
