@@ -30,7 +30,7 @@ public class Pheonexiumalfire extends Collectie {
 
     @Override
     public int performAttack() {
-        return 0;
+        return 10;
     }
 
     @Override

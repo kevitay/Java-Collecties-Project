@@ -45,6 +45,10 @@ public class PheonexiumalfireTest {
     public void shouldPreferDesertBiomes() {
         assertEquals(Biome.DESERT, pheonixy.getPreferredBiome());
     }
+    @Test
+    public void shouldHave10AttackPower() {
+        assertEquals(10, pheonixy.performAttack());
+    }
 
 
 }
