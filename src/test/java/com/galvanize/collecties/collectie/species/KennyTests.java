@@ -7,8 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Collectie: Kenny")
 public class KennyTests {
@@ -57,5 +56,15 @@ public class KennyTests {
         assertEquals(10,kenny.performAttack());
 }
 
+    @Test
+    public void shouldSuccessfullyDefend50pOfTheTime() {
+        int wins =  0;
+        for(int i = 0; i < 1000; i++) {
+            if(kenny.defend(0)) wins++;
+        }
+
+        System.out.println("Wins: " + wins);
+        assertTrue(wins > 450 && wins < 550);
+    }
 
 }
