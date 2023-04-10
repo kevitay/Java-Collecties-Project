@@ -29,16 +29,23 @@ public class FlukoguinTests {
 
     @Test
     public void shouldBeFlukoguinSpecies() {
-        assertEquals("Flukoguin", fluko.getSpecies());
+        Assertions.assertEquals("Flukoguin", fluko.getSpecies());
     }
 
     @Test
     public void shouldBeTypeSpecial() {
         Assertions.assertEquals(CollectieType.SPECIAL, fluko.getType());
     }
+    @Test
+    public void shouldProvideAGraphic() {
+        String graphic = fluko.getGraphic();
+        System.out.println(graphic);
+        Assertions.assertNotEquals(0, graphic.length());
+    }
 
-
-
-
+    @Test
+    public void shouldHaveTheCorrectSound() {
+        Assertions.assertEquals("YABBADABBAYOO", fluko.speak());
+    }
 
 }
