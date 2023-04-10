@@ -19,16 +19,12 @@ public enum Consumables {
   QUESTIONABLE_MUSHROOM(new QuestionableMushroom()),
   ENERGY_DRINK(new EnergyDrink()),
   PIZZA(new Pizza()),
-
   COFFEE_DRINK(new CoffeeDrink()),
-
   KONA_COFFEE(new KonaCoffee()),
   ANABOLICSTEROIDS(new AnabolicSteroids()),
   PHOENIXWING(new PhoenixWing()),
   NIBBLETS(new Nibblets()),
-
   BANANAS(new Bananas()),
-
   SPINACH(new Spinach()),
   SUGAR_CUBE(new SugarCube());
 
