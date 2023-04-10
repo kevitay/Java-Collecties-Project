@@ -22,4 +22,9 @@ public class GalvaTests {
         galvania.setName(newName);
         assertEquals(newName, galvania.getName());
     }
+
+    @Test
+    public void shouldBeGalvaSpecies() {
+        assertEquals("Galva", galvania.getSpecies());
+    }
 }
