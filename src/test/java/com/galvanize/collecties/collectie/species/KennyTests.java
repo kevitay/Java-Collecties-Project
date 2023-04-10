@@ -1,5 +1,6 @@
 package com.galvanize.collecties.collectie.species;
 
+import com.galvanize.collecties.Biome;
 import com.galvanize.collecties.collectie.CollectieType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,10 +25,9 @@ public class KennyTests {
     }
     @Test
     public void shouldBeKennySpecies() {
+
         assertEquals("Kenny", kenny.getSpecies());
     }
-
-
 
 
     @Test
@@ -46,6 +46,11 @@ public class KennyTests {
     @Test
     public void shouldHaveTheCorrectSound(){
         assertEquals("WOO-HOO!",kenny.speak());
+    }
+
+    @Test
+    public void shouldPreferMountainRangeBiomes() {
+        assertEquals(Biome.MOUNTAIN_RANGE, kenny.getPreferredBiome());
     }
 
 
