@@ -48,4 +48,14 @@ public class FlukoguinTests {
         Assertions.assertEquals("YABBADABBAYOO", fluko.speak());
     }
 
+    @Test
+    public void shouldPreferTaigaBiomes () {
+        Assertions.assertEquals(Biome.TAIGA, fluko.getPreferredBiome());
+    }
+
+    @Test
+    public void shouldHave75AttackPower() {
+        Assertions.assertEquals(75, fluko.performAttack());
+    }
+
 }

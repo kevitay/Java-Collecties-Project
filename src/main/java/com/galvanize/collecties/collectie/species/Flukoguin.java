@@ -40,12 +40,12 @@ public class Flukoguin extends Collectie {
 
     @Override
     public Biome getPreferredBiome() {
-        return null;
+        return Biome.TAIGA;
     }
 
     @Override
     public int performAttack() {
-        return 0;
+        return 75;
     }
 
     @Override
