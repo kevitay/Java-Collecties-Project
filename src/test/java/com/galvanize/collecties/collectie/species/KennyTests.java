@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @DisplayName("Collectie: Kenny")
 public class KennyTests {
@@ -19,6 +20,14 @@ public class KennyTests {
         kenny.setName(newName);
         assertEquals(newName,kenny.getName());
 
+    }
+
+
+    @Test
+    public void shouldProvideAGraphic() {
+        String graphic = kenny.getGraphic();
+        System.out.println(graphic);
+        assertNotEquals(0, graphic.length());
     }
 
 }
