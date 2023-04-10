@@ -23,7 +23,6 @@ public enum Consumables {
   ANABOLICSTEROIDS(new AnabolicSteroids()),
   PHOENIXWING(new PhoenixWing()),
   NIBBLETS(new Nibblets()),
-  VITAMIN_I(new VitaminI()),
   KONA_COFFEE(new KonaCoffee()),
   BANANAS(new Bananas()),
   SPINACH(new Spinach()),
