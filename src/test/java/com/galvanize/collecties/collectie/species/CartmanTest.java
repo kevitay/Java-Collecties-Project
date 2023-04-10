@@ -6,8 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Collectie: Cartman")
 public class CartmanTest {
@@ -39,7 +38,7 @@ public class CartmanTest {
     }
     @Test
     public void shouldHaveTheCorrectSound(){
-        assertEquals("RESPECT MY AUTHORITY", cartman.speak() );
+        assertEquals("RESPECT MY AUTHORITY", cartman.speak());
     }
     @Test
     public void shouldPreferMountainRangeBiomes(){
@@ -48,6 +47,20 @@ public class CartmanTest {
 @Test
     public void shouldHave100AttackPower(){
         assertEquals(100, cartman.performAttack());
+}
+@Test
+ public void shouldSuccessfullyDefend50pOfTheTime(){
+    int wins = 0;
+    for (int i = 0; i < 1000; i++){
+        if (cartman.defend(0)) wins++;
+    }
+    System.out.println("Wins: " + wins);
+    assertTrue(wins > 450 && wins < 550);
+}
+@Test
+    public void shouldGetNewCartmanOnClone(){
+        Cartman clone = cartman.clone();
+        assertNotEquals(clone, cartman);
 }
 }
 
