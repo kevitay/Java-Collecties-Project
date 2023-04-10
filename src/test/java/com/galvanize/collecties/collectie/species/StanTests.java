@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class StanTests {
     @DisplayName("Collectie: Stan")
     public class StanTests {
@@ -14,8 +16,10 @@ public class StanTests {
         public void testSetup() { stanley = new Stan(); }
 
         @Test
-        public void shouldbeAbleToRename() {
+        public void shouldBeAbleToRename() {
             String newName = "Stanley";
+            stanley.setName(newName);
+            assertEquals(newName, stanley.getName());
 
         }
     }

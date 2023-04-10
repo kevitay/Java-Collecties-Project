@@ -5,8 +5,8 @@ import com.galvanize.collecties.collectie.Collectie;
 import com.galvanize.collecties.collectie.CollectieType;
 
 public class Stan extends Collectie {
-    public Stan(CollectieType type, String sound) {
-        super(type, sound);
+    public Stan() {
+        super(CollectieType.SPECIAL, "You know, I learned something today");
     }
 
     @Override
