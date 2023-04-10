@@ -27,4 +27,9 @@ public class TriceratopsTests {
     public void shouldBeTriceratopsSpecies() {
         assertEquals("Triceratops", tops.getSpecies());
     }
+
+    @Test
+    public void shouldHaveTheCorrectSound() {
+        assertEquals("ROAR", tops.speak());
+    }
 }
