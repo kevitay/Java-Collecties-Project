@@ -27,5 +27,10 @@ public class SugarCubeTests {
         assertTrue(sugar.consume());
     }
 
-
+@Test
+    public void shouldShowCubeCountInName() {
+        assertTrue(sugar.getName().contains("(2)"));
+        sugar.consume();
+        assertTrue(sugar.getName().contains("(1)"));
+}
 }
