@@ -14,7 +14,7 @@ import java.util.Scanner;
 /*
  * Quite literally the "main" class.
  */
-public class Game {
+public class git Game {
 
   //----------------------------------------------------
   // GAME STATICS

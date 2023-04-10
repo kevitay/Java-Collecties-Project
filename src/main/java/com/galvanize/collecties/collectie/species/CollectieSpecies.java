@@ -18,6 +18,7 @@ public enum CollectieSpecies {
   REXTORE(new Rextore()),
   DODUD(new Dodud()),
   CARTMAN(new Cartman()),
+  Batman(new Batman()),
   INFERNIA(new Infernia()),
   BOOGIEWOOGIE(new BoogieWoogie()),
   GENGAR(new Gengar()),
