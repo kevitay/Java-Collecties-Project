@@ -26,6 +26,7 @@ public class BoogieWoogieTests {
         assertEquals(newName, boogie.getName());
     }
 
+
     @Test
     public void shouldBeBoogieWoogieSpecies() {
         assertEquals("BoogieWoogie", boogie.getSpecies());
