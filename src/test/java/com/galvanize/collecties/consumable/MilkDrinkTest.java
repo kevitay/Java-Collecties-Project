@@ -17,7 +17,7 @@ public class MilkDrinkTest {
 
     @Test
     public void shouldHaveTheRightDrink() {
-        Assertions.assertEquals("Skeletor strengthens bones with milk it does the body good", drink.getName());
+        Assertions.assertEquals("You strengthened your bones with milk it does the body good", drink.getName());
     }
 
     @Test

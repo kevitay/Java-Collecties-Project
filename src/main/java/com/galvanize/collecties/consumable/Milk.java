@@ -4,7 +4,7 @@ public class Milk implements Consumable {
 
     @Override
     public String getName() {
-        return "Skeletor strengthens bones with milk it does the body good";
+        return "You strengthened your bones with milk it does the body good";
     }
 
     @Override
