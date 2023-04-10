@@ -1,5 +1,7 @@
 package com.galvanize.collecties.collectie.species;
 
+import com.galvanize.collecties.collectie.CollectieType;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,7 +14,6 @@ public class KennyTests {
     Kenny kenny;
     @BeforeEach
     public void testSetup() { kenny = new Kenny(); }
-
 
     @Test
     public void shouldBeAbleToRename() {
@@ -32,6 +33,12 @@ public class KennyTests {
     @Test
     public void shouldHaveTheCorrectSound(){
         assertEquals("WOO-HOO!",kenny.speak());
+    }
+
+    @Test
+    public void shouldBeTypeSpecial() {
+
+        Assertions.assertEquals(CollectieType.SPECIAL, kenny.getType());
     }
 
 }
