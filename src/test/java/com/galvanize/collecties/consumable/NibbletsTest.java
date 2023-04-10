@@ -20,7 +20,7 @@ public class NibbletsTest {
     }
 
     @Test
-    public void shouldHave4SlicesToConsume() {
+    public void ShouldHaveaSingleConsumption() {
         assertTrue(nibblets.consume());
 
     }

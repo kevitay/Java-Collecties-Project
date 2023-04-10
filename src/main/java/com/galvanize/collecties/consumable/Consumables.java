@@ -19,7 +19,16 @@ public enum Consumables {
   QUESTIONABLE_MUSHROOM(new QuestionableMushroom()),
   ENERGY_DRINK(new EnergyDrink()),
   PIZZA(new Pizza()),
-  NIBBLETS(new Nibblets());
+  KONA_COFFEE(new KonaCoffee()),
+  ANABOLICSTEROIDS(new AnabolicSteroids()),
+  PHOENIXWING(new PhoenixWing()),
+  NIBBLETS(new Nibblets()),
+
+  BANANAS(new Bananas()),
+
+  SPINACH(new Spinach());
+
+
 
   // Create a static array of all the Consumables
   private static final Consumables[] consumablesArray = Consumables.values();
