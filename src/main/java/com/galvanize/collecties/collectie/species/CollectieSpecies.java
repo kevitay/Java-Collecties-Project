@@ -17,7 +17,7 @@ public enum CollectieSpecies {
   // SPECIES(new Species()) / KEY(ReferenceValue)
   REXTORE(new Rextore()),
   DODUD(new Dodud()),
- YETI(new Yeti()),
+  YETI(new Yeti()),
   INFERNIA(new Infernia()),
   BOOGIEWOOGIE(new BoogieWoogie()),
   GENGAR(new Gengar()),
