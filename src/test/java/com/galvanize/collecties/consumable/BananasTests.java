@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 @DisplayName("Consumable: Bananas")
-public class BananasTest {
+public class BananasTests {
     Bananas banana;
 
     @BeforeEach
@@ -16,4 +16,6 @@ public class BananasTest {
     @Test public void shouldHaveTheRightName() {
         Assertions.assertEquals("Bunch of Bananas", banana.getName());
     }
+
+
 }

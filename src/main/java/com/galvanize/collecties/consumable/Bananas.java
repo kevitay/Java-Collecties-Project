@@ -4,7 +4,7 @@ public class Bananas implements Consumable {
 
     @Override
     public String getName() {
-        return null;
+        return "Bunch of Bananas";
     }
 
     @Override
