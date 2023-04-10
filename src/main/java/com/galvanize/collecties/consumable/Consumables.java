@@ -23,7 +23,11 @@ public enum Consumables {
   ANABOLICSTEROIDS(new AnabolicSteroids()),
   PHOENIXWING(new PhoenixWing()),
   NIBBLETS(new Nibblets()),
+
+  BANANAS(new Bananas()),
+
   SPINACH(new Spinach());
+
 
 
   // Create a static array of all the Consumables
