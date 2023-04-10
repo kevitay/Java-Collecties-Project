@@ -1,4 +1,4 @@
-# Collecties! ______ Edition
+# Collecties! Cyan Edition
 
 Welcome to the world of collecties, where you explore and collect little animals called Collecties. As a developer and creative working on this project your job is to add _at least_ one new Collectie and _at least_ one new consumable item to the world. Follow the steps outlined below to do so.
 
