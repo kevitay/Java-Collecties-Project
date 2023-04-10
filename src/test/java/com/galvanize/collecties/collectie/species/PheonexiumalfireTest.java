@@ -36,6 +36,10 @@ public class PheonexiumalfireTest {
         System.out.println(graphic);
         assertNotEquals(0, graphic.length());
     }
+    @Test
+    public void shouldHaveTheCorrectSound() {
+        assertEquals("SKADOOSH", pheonixy.speak());
+    }
 
 
 }
