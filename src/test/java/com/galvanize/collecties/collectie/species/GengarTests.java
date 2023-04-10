@@ -43,5 +43,11 @@ public class GengarTests {
         assertNotEquals(0, graphic.length());
     }
 
+    @Test
+    public void shouldHaveTheCorrectSound() {
+        assertEquals("SSSSWWWSHHHSSSSSHHH", gengar.speak());
+    }
+
+
 
 }
