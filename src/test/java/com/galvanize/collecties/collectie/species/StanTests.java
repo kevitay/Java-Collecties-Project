@@ -3,25 +3,34 @@ package com.galvanize.collecties.collectie.species;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junitpioneer.jupiter.StdOut;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-@DisplayName("Collectie: Stan")
+@DisplayName("Collectie: Stanley")
 public class StanTests {
 
-    Stan stanley;
+    Stanley stan;
 
     @BeforeEach
     public void testSetup() {
-        stanley = new Stan();
+        stan = new Stanley();
     }
 
     @Test
     public void shouldBeAbleToRename() {
-        String newName = "Stanley";
-        stanley.setName(newName);
-        assertEquals(newName, stanley.getName());
+        String newName = "Stan";
+        stan.setName(newName);
+        assertEquals(newName, stan.getName());
 
+    }
+
+    @Test
+    public void shouldReturnGraphic() {
+        String graphic = stan.getGraphic();
+        System.out.println(graphic);
+        assertNotEquals(0, stan.getGraphic().length());
     }
 }
 
