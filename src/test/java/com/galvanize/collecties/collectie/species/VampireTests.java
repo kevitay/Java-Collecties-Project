@@ -25,7 +25,10 @@ public class VampireTests {
         Assertions.assertEquals(newName, testVampire.getName());
     }
 
-    //public void shouldBeVampireSpecies (){}
+    @Test
+    public void shouldBeVampireSpecies (){
+        Assertions.assertEquals("Vampire", testVampire.getSpecies());
+    }
 
     //public void shouldBeTypeSPECIAL (){}
 
