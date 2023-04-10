@@ -22,6 +22,19 @@ public class KennyTests {
         assertEquals(newName,kenny.getName());
 
     }
+    @Test
+    public void shouldBeKennySpecies() {
+        assertEquals("Kenny", kenny.getSpecies());
+    }
+
+
+
+
+    @Test
+    public void shouldBeTypeSpecial() {
+
+        Assertions.assertEquals(CollectieType.SPECIAL, kenny.getType());
+    }
 
     @Test
     public void shouldProvideAGraphic() {
@@ -35,10 +48,6 @@ public class KennyTests {
         assertEquals("WOO-HOO!",kenny.speak());
     }
 
-    @Test
-    public void shouldBeTypeSpecial() {
 
-        Assertions.assertEquals(CollectieType.SPECIAL, kenny.getType());
-    }
 
 }
