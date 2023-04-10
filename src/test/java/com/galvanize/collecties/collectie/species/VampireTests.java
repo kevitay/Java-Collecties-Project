@@ -39,6 +39,7 @@ public class VampireTests {
     @Test
     public void shouldProvideAGraphic() {
          Assertions.assertNotEquals(0, testVampire.getGraphic().length());
+        System.out.println(testVampire.getGraphic());
     }
 
     @Test
@@ -57,7 +58,16 @@ public class VampireTests {
         Assertions.assertEquals(8, testVampire.performAttack());
     }
 
-    //public void shouldSuccessfullyDefend80pOfTheTime (){}
+    @Test
+    public void shouldSuccessfullyDefend80pOfTheTime (){
+        int wins = 0;
+        for (int i = 0; i < 1000; i++) {
+            if(testVampire.defend(0)) wins++;
+        }
+        System.out.println("Wins: " + wins);
+        Assertions.assertTrue(wins > 750 && wins < 850);
+
+    }
 
     @Test
     public void shouldNewVampireOnClone(){
