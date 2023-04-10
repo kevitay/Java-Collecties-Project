@@ -2,12 +2,13 @@ package com.galvanize.collecties.consumable;
 
 import org.junit.jupiter.api.BeforeEach;
 
-public class SpinachTests implements Consumable {
+public class VitaminITests implements Consumable {
 
-    Spinach spinach;
+    VitaminI vitaminI;
 
     @BeforeEach
-    public void testSetUp() {spinach = new Spinach(); }
+    public void testSetUp() {
+        vitaminI = new VitaminI(); }
     @Tests
     public  String getName() { return "Spinach"; }
 
@@ -15,6 +16,6 @@ public class SpinachTests implements Consumable {
     public boolean consume() {return true; }
 
     @Override
-    public Consumable clone() { return new Spinach(); }
+    public Consumable clone() { return new VitaminI(); }
 
 }

@@ -1,6 +1,6 @@
 package com.galvanize.collecties.consumable;
 
-public class Spinach implements Consumable {
+public class VitaminI implements Consumable {
 
     @Override
     public String getName() { return "Spinach"; }
@@ -9,6 +9,6 @@ public class Spinach implements Consumable {
     public boolean consume() {return true; }
 
     @Override
-    public Consumable clone() { return new Spinach(); }
+    public Consumable clone() { return new VitaminI(); }
 
 }

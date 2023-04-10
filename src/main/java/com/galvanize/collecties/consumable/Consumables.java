@@ -22,7 +22,7 @@ public enum Consumables {
   ANABOLICSTEROIDS(new AnabolicSteroids()),
   PHOENIXWING(new PhoenixWing()),
   NIBBLETS(new Nibblets()),
-  SPINACH(new Spinach());
+  SPINACH(new VitaminI());
 
   // Create a static array of all the Consumables
   private static final Consumables[] consumablesArray = Consumables.values();
