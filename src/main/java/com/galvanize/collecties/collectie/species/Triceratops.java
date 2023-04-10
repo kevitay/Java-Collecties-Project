@@ -1,6 +1,7 @@
 package com.galvanize.collecties.collectie.species;
 
 import com.galvanize.collecties.Biome;
+import com.galvanize.collecties.Game;
 import com.galvanize.collecties.collectie.Collectie;
 import com.galvanize.collecties.collectie.CollectieType;
 
@@ -26,11 +27,12 @@ public class Triceratops extends Collectie {
 
     @Override
     public boolean defend(int attackStrength) {
-        return false;
+        if(Game.TEST_MODE) return false;
+        return  Game.randogen.nextInt(100) > 25;
     }
 
     @Override
-    public Collectie clone() {
-        return null;
+    public Triceratops clone() {
+        return new Triceratops();
     }
 }

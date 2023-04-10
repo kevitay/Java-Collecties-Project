@@ -5,8 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Collectie: Triceratops")
 public class TriceratopsTests {
@@ -50,5 +49,21 @@ public class TriceratopsTests {
     @Test
     public void shouldHave70AttackPower() {
         assertEquals(70, tops.performAttack());
+    }
+
+    @Test
+    public void shouldSuccessfullyDefend75pOfTheTime() {
+        int wins = 0;
+        for (int i = 0; i < 1000; i++) {
+            if (tops.defend(0)) wins++;
+        }
+        System.out.println("Wins: " + wins);
+        assertTrue(wins > 700 && wins < 800);
+    }
+
+    @Test
+    public void shouldNewTriceratopsOnClone() {
+        Triceratops clone = tops.clone();
+        assertNotEquals(clone, tops);
     }
 }
