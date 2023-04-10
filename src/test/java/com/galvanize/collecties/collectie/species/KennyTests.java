@@ -52,7 +52,10 @@ public class KennyTests {
     public void shouldPreferMountainRangeBiomes() {
         assertEquals(Biome.MOUNTAIN_RANGE, kenny.getPreferredBiome());
     }
-
+    @Test
+    public void shouldHave10AttackPower(){
+        assertEquals(10,kenny.performAttack());
+}
 
 
 }
