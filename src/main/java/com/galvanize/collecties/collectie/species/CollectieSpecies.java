@@ -18,7 +18,7 @@ public enum CollectieSpecies {
   REXTORE(new Rextore()),
   DODUD(new Dodud());
 
-
+ Yeti(new Yeti());
   /*
    * Enums can actually have a constructor
    * and instance data/methods. In this case
