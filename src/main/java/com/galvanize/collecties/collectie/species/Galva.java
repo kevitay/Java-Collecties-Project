@@ -1,6 +1,7 @@
 package com.galvanize.collecties.collectie.species;
 
 import com.galvanize.collecties.Biome;
+import com.galvanize.collecties.Game;
 import com.galvanize.collecties.collectie.Collectie;
 import com.galvanize.collecties.collectie.CollectieType;
 
@@ -33,12 +34,13 @@ public class Galva extends Collectie {
 
     @Override
     public int performAttack() {
-        return 0;
+        return 15;
     }
 
     @Override
     public boolean defend(int attackStrength) {
-        return false;
+        if(Game.TEST_MODE) return false;
+        return Game.randogen.nextInt(100) > 25;
     }
 
     @Override

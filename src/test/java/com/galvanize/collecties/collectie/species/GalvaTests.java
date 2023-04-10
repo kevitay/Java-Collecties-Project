@@ -51,4 +51,19 @@ public class GalvaTests {
     public void shouldPreferPlainsBiomes() {
         assertEquals(Biome.PLAINS, galvania.getPreferredBiome());
     }
+
+    @Test
+    public void shouldHaveFifteenAttackPower() {
+        assertEquals(15, galvania.performAttack());
+    }
+
+    @Test
+    public void shouldSuccessfullyDefend75pOfTheTime() {
+        int wins = 0;
+        for (int i = 0; i < 1000; i++) {
+            if(galvania.defend(0)) wins++;
+        }
+        System.out.println("Wins: " + wins);
+        assertTrue(wins > 700 && wins < 800);
+    }
 }
