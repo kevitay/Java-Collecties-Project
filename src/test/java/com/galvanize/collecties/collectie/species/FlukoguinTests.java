@@ -9,6 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("Collectie: Flukoguin")
 public class FlukoguinTests {
@@ -57,5 +58,20 @@ public class FlukoguinTests {
     public void shouldHave75AttackPower() {
         Assertions.assertEquals(75, fluko.performAttack());
     }
+
+    @Test
+    public void shouldSuccessfullyDefend50pOfTheTime() {
+        int wins = 0;
+        for (int i = 0; i < 1000; i++) {
+            if(fluko.defend(0)) wins++;
+        }
+
+        System.out.println("Wins: " + wins);
+        Assertions.assertTrue(wins > 450 && wins < 550);
+    }
+
+
+
+
 
 }

@@ -50,7 +50,8 @@ public class Flukoguin extends Collectie {
 
     @Override
     public boolean defend(int attackStrength) {
-        return false;
+        if(Game.TEST_MODE) return false;
+        return Game.randogen.nextInt(100) > 50;
     }
 
     @Override
