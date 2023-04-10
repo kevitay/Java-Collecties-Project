@@ -8,8 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Collectie: Gengar")
 public class GengarTests {
@@ -58,8 +57,15 @@ public class GengarTests {
         assertEquals(2, gengar.performAttack());
     }
 
-
-
+    @Test
+    public void shouldSuccessfullyDefend75pOfTheTime() {
+        int wins = 0;
+        for (int i = 0; i < 1000; i++) {
+            if (gengar.defend(0)) wins++;
+        }
+        System.out.println("Wins: " + wins);
+        assertTrue(wins > 700 && wins < 800);
+    }
 
 
 }
