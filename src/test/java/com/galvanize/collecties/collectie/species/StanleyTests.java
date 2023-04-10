@@ -1,6 +1,7 @@
 package com.galvanize.collecties.collectie.species;
 
 import com.galvanize.collecties.Biome;
+import com.galvanize.collecties.collectie.CollectieType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -61,6 +62,16 @@ public class StanleyTests {
     @Test
     public void shouldGetSpecies() {
         assertEquals("Stanley", stan.getSpecies());
+    }
+
+    @Test
+    public void shouldBeTypeSpecial() {
+        assertEquals(CollectieType.SPECIAL, stan.getType());
+    }
+
+    @Test
+    public void shouldHaveCorrectSound() {
+        assertEquals("YOU KNOW, I LEARNED SOMETHING TODAY", stan.speak());
     }
 }
 
