@@ -57,7 +57,7 @@ public class Stanley extends Collectie {
     }
 
     @Override
-    public Collectie clone() {
-        return null;
+    public Stanley clone() {
+        return new Stanley();
     }
 }

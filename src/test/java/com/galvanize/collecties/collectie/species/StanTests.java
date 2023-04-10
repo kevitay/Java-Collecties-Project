@@ -52,5 +52,11 @@ public class StanTests {
         System.out.println("Wins: " + wins);
         assertTrue(wins > 450 && wins < 550);
     }
+
+    @Test
+    public void shouldCloneNewStanley() {
+        Stanley clone = stan.clone();
+        assertNotEquals(clone, stan);
+    }
 }
 
