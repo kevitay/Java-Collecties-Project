@@ -9,7 +9,7 @@ public class Milk implements Consumable {
 
     @Override
     public boolean consume() {
-        return false;
+        return true;
     }
 
     @Override

@@ -20,4 +20,9 @@ public class MilkDrinkTest {
         Assertions.assertEquals("Skeletor strengthens bones with milk it does the body good", drink.getName());
     }
 
+    @Test
+    public void shouldOnlyHaveOneUsage() {
+        Assertions.assertTrue(drink.consume());
+    }
+
 }
