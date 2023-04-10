@@ -1,5 +1,6 @@
 package com.galvanize.collecties.collectie.species;
 
+import com.galvanize.collecties.Biome;
 import com.galvanize.collecties.collectie.CollectieType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -44,5 +45,10 @@ public class GalvaTests {
     @Test
     public void shouldHaveTheCorrectSound() {
         assertEquals("ZZZZZZAAAAAAPPPPPP", galvania.speak());
+    }
+
+    @Test
+    public void shouldPreferPlainsBiomes() {
+        assertEquals(Biome.PLAINS, galvania.getPreferredBiome());
     }
 }
