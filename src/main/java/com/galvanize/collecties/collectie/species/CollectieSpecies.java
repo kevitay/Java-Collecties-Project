@@ -17,7 +17,6 @@ public enum CollectieSpecies {
   // SPECIES(new Species()) / KEY(ReferenceValue)
   REXTORE(new Rextore()),
   DODUD(new Dodud());
-//  FLUKOGUIN(new Flukoguin());
 
   /*
    * Enums can actually have a constructor
