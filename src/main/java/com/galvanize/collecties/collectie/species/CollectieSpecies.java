@@ -20,7 +20,6 @@ public enum CollectieSpecies {
   INFERNIA(new Infernia());
 
 
-
   /*
    * Enums can actually have a constructor
    * and instance data/methods. In this case
