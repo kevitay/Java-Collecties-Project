@@ -67,4 +67,10 @@ public class KennyTests {
         assertTrue(wins > 450 && wins < 550);
     }
 
+    @Test
+    public void shouldNewKennyOnClone() {
+        Kenny clone = kenny.clone();
+        assertNotEquals(clone, kenny);
+    }
+
 }
