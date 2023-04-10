@@ -1,6 +1,7 @@
 package com.galvanize.collecties.collectie.species;
 
 import com.galvanize.collecties.Biome;
+import com.galvanize.collecties.collectie.Collectie;
 import com.galvanize.collecties.collectie.CollectieType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -57,6 +58,12 @@ public class PheonexiumalfireTest {
 
         System.out.println("Wins: " + wins);
         assertTrue(wins > 450 && wins < 550);
+    }
+
+    @Test
+    public void shouldNewPhoneiumalFireOnClone() {
+        Collectie clone = pheonixy.clone();
+        assertNotEquals(clone, pheonixy);
     }
 
 

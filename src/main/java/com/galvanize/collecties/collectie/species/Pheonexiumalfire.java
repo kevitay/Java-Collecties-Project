@@ -42,6 +42,6 @@ public class Pheonexiumalfire extends Collectie {
 
     @Override
     public Collectie clone() {
-        return null;
+        return new Pheonexiumalfire();
     }
 }
