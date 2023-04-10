@@ -1,5 +1,7 @@
 package com.galvanize.collecties.collectie.species;
 
+import com.galvanize.collecties.collectie.CollectieType;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -22,6 +24,10 @@ public class PheonexiumalfireTest {
     @Test
     public void shouldBePheonexiumalfireSpecies() {
         assertEquals("Pheonexiumalfire", pheonixy.getSpecies());
+    }
+    @Test
+    void shouldBeTypeFIRE() {
+        Assertions.assertEquals(CollectieType.FIRE, pheonixy.getType());
     }
 
 
