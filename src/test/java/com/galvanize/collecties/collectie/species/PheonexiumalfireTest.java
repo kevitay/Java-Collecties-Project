@@ -19,6 +19,10 @@ public class PheonexiumalfireTest {
         pheonixy.setName(newName);
         assertEquals(newName, pheonixy.getName());
     }
+    @Test
+    public void shouldBePheonexiumalfireSpecies() {
+        assertEquals("Pheonexiumalfire", pheonixy.getSpecies());
+    }
 
 
 }

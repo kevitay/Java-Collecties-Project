@@ -5,7 +5,7 @@ import com.galvanize.collecties.collectie.CollectieType;
 
 public class Pheonexiumalfire extends Collectie {
     public Pheonexiumalfire() {
-        super(CollectieType.PHEONIX, "skadoosh");
+        super(CollectieType.FIRE, "skadoosh");
     }
 
     @Override
