@@ -42,7 +42,7 @@ public class TriceratopsTests {
     }
 
     @Test
-    public void shouldPreferVolcanicBiomes() {
+    public void shouldPreferPlainsBiomes() {
         assertEquals(Biome.PLAINS, tops.getPreferredBiome());
     }
 
