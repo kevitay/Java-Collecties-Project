@@ -19,6 +19,7 @@ public class GameTests {
         String input = "n\n4\n";
         disableGameSleep();
         String output = runGameWithInput(input);
+        enableGameSleep();
         System.out.println(output);
         displayOutputLines(output);
         Assertions.assertEquals("?: Thank you for playing!", output.split("\n")[13]);
