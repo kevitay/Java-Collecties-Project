@@ -1,6 +1,7 @@
 package com.galvanize.collecties.collectie.species;
 
 import com.galvanize.collecties.Biome;
+import com.galvanize.collecties.collectie.CollectieType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -30,7 +31,10 @@ public class VampireTests {
         Assertions.assertEquals("Vampire", testVampire.getSpecies());
     }
 
-    //public void shouldBeTypeSPECIAL (){}
+    @Test
+    public void shouldBeTypeSPECIAL (){
+        Assertions.assertEquals(CollectieType.SPECIAL, testVampire.getType());
+    }
 
     //public void shouldProvideAGraphic() {}
     @Test
