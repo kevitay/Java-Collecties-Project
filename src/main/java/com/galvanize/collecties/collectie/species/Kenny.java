@@ -58,7 +58,7 @@ public class Kenny extends Collectie {
     }
 
     @Override
-    public Collectie clone() {
+    public Kenny clone() {
         return new Kenny();
     }
 
