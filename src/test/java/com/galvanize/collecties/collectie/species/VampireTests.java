@@ -30,8 +30,11 @@ public class VampireTests {
     //public void shouldBeTypeSPECIAL (){}
 
     //public void shouldProvideAGraphic() {}
-
-    //public void shouldHaveTheCorrectSound(){}
+    @Test
+    public void shouldHaveTheCorrectSound(){
+        String shout = "I WANT TO SUCK YOUR BLOOD";
+        Assertions.assertEquals(shout, testVampire.speak());
+    }
 
     @Test
     public void shouldPreferMountainBiome (){
