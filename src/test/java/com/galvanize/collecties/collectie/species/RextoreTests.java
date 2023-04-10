@@ -50,6 +50,7 @@ public class RextoreTests {
 
   @Test
   public void shouldPreferVolcanicBiomes() {
+
     assertEquals(Biome.VOLCANIC, rexxie.getPreferredBiome());
   }
 
