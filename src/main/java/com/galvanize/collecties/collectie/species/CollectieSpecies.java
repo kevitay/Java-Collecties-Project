@@ -1,4 +1,5 @@
 package com.galvanize.collecties.collectie.species;
+
 import com.galvanize.collecties.collectie.Collectie;
 
 /*
@@ -11,39 +12,44 @@ import com.galvanize.collecties.collectie.Collectie;
  */
 public enum CollectieSpecies {
 
-  // Each element in this enum requires
-  // a reference instance of the class
-  // it represents
-  // SPECIES(new Species()) / KEY(ReferenceValue)
-  REXTORE(new Rextore()),
-  DODUD(new Dodud()),
-  CARTMAN(new Cartman()),
-  Batman(new Batman()),
-  INFERNIA(new Infernia()),
-  BOOGIEWOOGIE(new BoogieWoogie()),
-  GENGAR(new Gengar()),
-  FLUKOGUIN(new Flukoguin()),
-  TRICERATOPS(new Triceratops()),
-  GALVA(new Galva());
 
-  /*
-   * Enums can actually have a constructor
-   * and instance data/methods. In this case
-   * we just need to keep a reference object
-   * for the consumable each enum represents
-   * This allows us to easy create clones of
-   * those reference objects attached to each enum
-   * Check out the code in the Consumables enum for
-   * usage examples
-   */
+   // Each element in this enum requires
+    // a reference instance of the class
+    // it represents
+    // SPECIES(new Species()) / KEY(ReferenceValue)
+    REXTORE(new Rextore()),
+    DODUD(new Dodud()),
+    STANLEY(new Stanley()),
+    KENNY(new Kenny()),
+    Batman(new Batman()),
+    INFERNIA(new Infernia()),
+    BOOGIEWOOGIE(new BoogieWoogie()),
+    GENGAR(new Gengar()),
+    FLUKOGUIN(new Flukoguin()),
+    TRICERATOPS(new Triceratops()),
+    GALVA(new Galva()),
+    CARTMAN(new Cartman());
 
-  private final Collectie reference;
 
-  CollectieSpecies(Collectie reference) {
-    this.reference = reference;
-  }
 
-  public Collectie getReference() {
-    return reference;
-  }
+    /*
+     * Enums can actually have a constructor
+     * and instance data/methods. In this case
+     * we just need to keep a reference object
+     * for the consumable each enum represents
+     * This allows us to easy create clones of
+     * those reference objects attached to each enum
+     * Check out the code in the Consumables enum for
+     * usage examples
+     */
+
+    private final Collectie reference;
+
+    CollectieSpecies(Collectie reference) {
+        this.reference = reference;
+    }
+
+    public Collectie getReference() {
+        return reference;
+    }
 }
