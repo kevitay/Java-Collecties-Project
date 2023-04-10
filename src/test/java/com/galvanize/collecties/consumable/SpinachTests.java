@@ -26,4 +26,11 @@ public class SpinachTests {
         assertFalse(spinach.consume());
         assertTrue(spinach.consume());
     }
+
+    @Test
+    public void shouldShowCanCountInName() {
+        assertTrue(spinach.getName().contains("(2)"));
+        spinach.consume();
+        assertTrue(spinach.getName().contains("(1)"));
+    }
 }
