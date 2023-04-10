@@ -1,5 +1,6 @@
 package com.galvanize.collecties.collectie.species;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -31,6 +32,11 @@ public class StanTests {
         String graphic = stan.getGraphic();
         System.out.println(graphic);
         assertNotEquals(0, stan.getGraphic().length());
+    }
+
+    @Test
+    public void shouldReturnPreferredBiome() {
+        assertEquals(Biome.MOUNTAIN_RANGE, stan.getPreferredBiome());
     }
 }
 
