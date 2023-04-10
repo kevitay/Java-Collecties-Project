@@ -33,4 +33,16 @@ public class GalvaTests {
     public void shouldBeTypeElemental() {
         assertEquals(CollectieType.ELEMENTAL, galvania.getType());
     }
+
+    @Test
+    public void shouldProvideAGraphic() {
+        String graphic = galvania.getGraphic();
+        System.out.println(graphic);
+        assertNotEquals(0, graphic.length());
+    }
+
+    @Test
+    public void shouldHaveTheCorrectSound() {
+        assertEquals("ZZZZZZAAAAAAPPPPPP", galvania.speak());
+    }
 }

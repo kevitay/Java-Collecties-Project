@@ -11,7 +11,19 @@ public class Galva extends Collectie {
 
     @Override
     public String getGraphic() {
-        return "/";
+        return "     _, .--.\n" +
+                "    (  / (  '-.\n" +
+                "    .-=-.    ) -.\n" +
+                "   /   (  .' .   \\\n" +
+                "   \\ ( ' ,_) ) \\_/\n" +
+                "    (_ , /\\  ,_/\n" +
+                "      '--\\  \\--`\n" +
+                "         _\\ _\\\n" +
+                "         \\ \\\n" +
+                "         _\\_\\\n" +
+                "          \\\\\n" +
+                "           \\\\\n" +
+                "        -.'.`\\.'.-";
     }
 
     @Override
