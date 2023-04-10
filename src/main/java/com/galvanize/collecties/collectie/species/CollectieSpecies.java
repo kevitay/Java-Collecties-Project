@@ -21,7 +21,10 @@ public enum CollectieSpecies {
   BOOGIEWOOGIE(new BoogieWoogie()),
   GENGAR(new Gengar()),
   FLUKOGUIN(new Flukoguin()),
+  PHEONEXIUMALFIRE(new Pheonexiumalfire()),
   TRICERATOPS(new Triceratops());
+
+
   /*
    * Enums can actually have a constructor
    * and instance data/methods. In this case
