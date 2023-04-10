@@ -19,7 +19,7 @@ public enum Consumables {
   QUESTIONABLE_MUSHROOM(new QuestionableMushroom()),
   ENERGY_DRINK(new EnergyDrink()),
   PIZZA(new Pizza()),
-  ANABOLICSTEROIDS(new AnabolicSteroids());
+  ANABOLICSTEROIDS(new AnabolicSteroids()),
   PHOENIXWING(new PhoenixWing()),
   NIBBLETS(new Nibblets());
 
