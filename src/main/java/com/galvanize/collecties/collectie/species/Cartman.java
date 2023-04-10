@@ -5,12 +5,28 @@ import com.galvanize.collecties.collectie.Collectie;
 import com.galvanize.collecties.collectie.CollectieType;
 
 public class Cartman extends Collectie {
-    public Cartman() {super (CollectieType.SPECIAL,  "RESPECT MY AUTHORITY"); }
+    public Cartman() {super (CollectieType.GHOST,  "RESPECT MY AUTHORITY"); }
 
 
     @Override
     public String getGraphic() {
-        return null;
+        return "      _._\n" +
+                "           __.{,_.).__\n" +
+                "        .-\"           \"-.\n" +
+                "      .'  __.........__  '.\n" +
+                "     /.-'`___.......___`'-.\\\n" +
+                "    /_.-'` /   \\ /   \\ `'-._\\\n" +
+                "    |     |   '/ \\'   |     |\n" +
+                "    |      '-'     '-'      |\n" +
+                "    ;                       ;\n" +
+                "    _\\         ___         /_\n" +
+                "   /  '.'-.__  ___  __.-'.'  \\\n" +
+                " _/_    `'-..._____...-'`    _\\_\n" +
+                "/   \\           .           /   \\\n" +
+                "\\____)         .           (____/\n" +
+                "    \\___________.___________/\n" +
+                "      \\___________________/\n" +
+                "jgs  (_____________________)";
     }
 
     @Override
