@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @DisplayName("Collectie: Triceratops")
 public class TriceratopsTests {
@@ -26,6 +27,13 @@ public class TriceratopsTests {
     @Test
     public void shouldBeTriceratopsSpecies() {
         assertEquals("Triceratops", tops.getSpecies());
+    }
+
+    @Test
+    public void shouldProvideAGraphic() {
+        String graphic = tops.getGraphic();
+        System.out.println(graphic);
+        assertNotEquals(0, graphic.length());
     }
 
     @Test

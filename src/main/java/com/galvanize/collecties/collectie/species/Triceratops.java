@@ -10,9 +10,8 @@ public class Triceratops extends Collectie {
         super(CollectieType.DINOSAUR, "roar");
     }
 
-    @Override
     public String getGraphic() {
-        return null;
+        return " test";
     }
 
     @Override
