@@ -2,6 +2,7 @@ package com.galvanize.collecties.collectie.species;
 
 import com.galvanize.collecties.Biome;
 import com.galvanize.collecties.collectie.CollectieType;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -28,5 +29,11 @@ public class GengarTests {
     public void shouldBeGengarSpecies() {
         assertEquals("Gengar", gengar.getSpecies());
     }
+
+    @Test
+    public void shouldBeTypeGhost() {
+        Assertions.assertEquals(CollectieType.GHOST, gengar.getType());
+    }
+
 
 }
