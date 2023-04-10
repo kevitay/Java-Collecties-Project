@@ -17,7 +17,11 @@ public class TruBloodTests {
 
     @Test
     public void shouldHaveCorrectName() {
-        Assertions.assertEquals("You quench your blood thirst with a pint of TruBlood.", drink.getName());
+        Assertions.assertEquals("You quench your thirst for blood with a pint of TruBlood.", drink.getName());
     }
 
+    @Test
+    public void shouldOnlyHaveOneUsage(){
+        Assertions.assertTrue(drink.consume());
+    }
 }
