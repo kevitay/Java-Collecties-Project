@@ -16,6 +16,7 @@ public enum Consumables {
   // a reference instance of the class
   // it represents
   // CONSUMABLE(new Consumable()) / KEY(VALUE)
+  QuestionableMushroom(new QuestionableMushroom()),
   ENERGY_DRINK(new EnergyDrink()),
   PIZZA(new Pizza());
 
