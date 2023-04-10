@@ -26,7 +26,8 @@ public enum Consumables {
 
   BANANAS(new Bananas()),
 
-  SPINACH(new Spinach());
+  SPINACH(new Spinach()),
+  SUGAR_CUBE(new SugarCube());
 
 
 
