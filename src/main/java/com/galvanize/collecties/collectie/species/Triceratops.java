@@ -21,7 +21,7 @@ public class Triceratops extends Collectie {
 
     @Override
     public int performAttack() {
-        return 0;
+        return 70;
     }
 
     @Override

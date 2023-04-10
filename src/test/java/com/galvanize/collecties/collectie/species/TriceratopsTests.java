@@ -47,4 +47,8 @@ public class TriceratopsTests {
         assertEquals(Biome.PLAINS, tops.getPreferredBiome());
     }
 
+    @Test
+    public void shouldHave70AttackPower() {
+        assertEquals(70, tops.performAttack());
+    }
 }
