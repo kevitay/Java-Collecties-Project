@@ -1,7 +1,6 @@
 package com.galvanize.collecties.collectie.species;
 
 import com.galvanize.collecties.Biome;
-import com.galvanize.collecties.Game;
 import com.galvanize.collecties.collectie.CollectieType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,61 +9,60 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Collectie: Rextor")
-public class RextoreTests {
+@DisplayName("Collectie: Infernia")
+public class InferniaTests {
 
-  Rextore rexxie;
+  Infernia inferno;
 
   @BeforeEach
   public void testSetup() {
-    rexxie = new Rextore();
+    inferno = new Infernia();
   }
 
   @Test
   public void shouldBeAbleToRename() {
-    String newName = "Rexxor";
-    rexxie.setName(newName);
-    assertEquals(newName, rexxie.getName());
+    String newName = "flamie";
+    inferno.setName(newName);
+    assertEquals(newName, inferno.getName());
   }
 
   @Test
-  public void shouldBeRextoreSpecies() {
-    assertEquals("Rextore", rexxie.getSpecies());
+  public void shouldBeInferniaSpecies() {
+    assertEquals("Infernia", inferno.getSpecies());
   }
 
   @Test
-  public void shouldBeTypeDinosaur() {
-    Assertions.assertEquals(CollectieType.DINOSAUR, rexxie.getType());
+  public void shouldBeTypeElemental() {
+    Assertions.assertEquals(CollectieType.ELEMENTAL, inferno.getType());
   }
 
   @Test
   public void shouldProvideAGraphic() {
-    String graphic = rexxie.getGraphic();
+    String graphic = inferno.getGraphic();
     System.out.println(graphic);
     assertNotEquals(0, graphic.length());
   }
 
   @Test
   public void shouldHaveTheCorrectSound() {
-    assertEquals("RARWAR", rexxie.speak());
+    assertEquals("BURNNNN", inferno.speak());
   }
 
   @Test
   public void shouldPreferVolcanicBiomes() {
-
-    assertEquals(Biome.VOLCANIC, rexxie.getPreferredBiome());
+    assertEquals(Biome.VOLCANIC, inferno.getPreferredBiome());
   }
 
   @Test
-  public void shouldHave10AttackPower() {
-    assertEquals(10, rexxie.performAttack());
+  public void shouldHave15AttackPower() {
+    assertEquals(15, inferno.performAttack());
   }
 
   @Test
   public void shouldSuccessfullyDefend50pOfTheTime() {
     int wins =  0;
     for(int i = 0; i < 1000; i++) {
-      if(rexxie.defend(0)) wins++;
+      if(inferno.defend(0)) wins++;
     }
 
     System.out.println("Wins: " + wins);
@@ -72,8 +70,8 @@ public class RextoreTests {
   }
 
   @Test
-  public void shouldNewRextoreOnClone() {
-    Rextore clone = rexxie.clone();
-    assertNotEquals(clone, rexxie);
+  public void shouldNewInferniaOnClone() {
+    Infernia clone = inferno.clone();
+    assertNotEquals(clone, inferno);
   }
 }
