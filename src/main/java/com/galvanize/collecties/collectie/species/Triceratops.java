@@ -16,7 +16,7 @@ public class Triceratops extends Collectie {
 
     @Override
     public Biome getPreferredBiome() {
-        return null;
+        return Biome.PLAINS;
     }
 
     @Override

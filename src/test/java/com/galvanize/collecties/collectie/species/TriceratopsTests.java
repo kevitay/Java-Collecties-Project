@@ -1,5 +1,6 @@
 package com.galvanize.collecties.collectie.species;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -40,4 +41,10 @@ public class TriceratopsTests {
     public void shouldHaveTheCorrectSound() {
         assertEquals("ROAR", tops.speak());
     }
+
+    @Test
+    public void shouldPreferVolcanicBiomes() {
+        assertEquals(Biome.PLAINS, tops.getPreferredBiome());
+    }
+
 }
