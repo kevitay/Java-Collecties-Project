@@ -14,6 +14,6 @@ public class Milk implements Consumable {
 
     @Override
     public Consumable clone() {
-        return null;
+        return new Milk();
     }
 }
