@@ -70,7 +70,11 @@ public class FlukoguinTests {
         Assertions.assertTrue(wins > 450 && wins < 550);
     }
 
-
+    @Test
+    public void shouldNewFlukoguinOnClone() {
+        Flukoguin clone = fluko.clone();
+        Assertions.assertNotEquals(clone, fluko);
+    }
 
 
 
