@@ -3,7 +3,7 @@ package com.galvanize.collecties.consumable;
 public class CoffeeDrink implements Consumable{
     @Override
     public String getName() {
-        return "Cartmans Coffee Drink";
+        return "Cartman's Super Terrific Coffee";
     }
 
     @Override

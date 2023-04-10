@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@DisplayName("Consumable: Coffee Drink")
+@DisplayName("Consumable: Cartman's Coffee Drink")
 
 public class CoffeeDrinkTest {
 
@@ -18,7 +18,7 @@ public class CoffeeDrinkTest {
 
     @Test
     public void shouldHaveTheRightName(){
-        assertEquals("Cartmans Coffee Drink", drink.getName());
+        assertEquals("Cartman's Super Terrific Coffee", drink.getName());
     }
     @Test
     public void shouldOnlyHaveOneUsage(){
