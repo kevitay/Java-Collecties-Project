@@ -44,7 +44,7 @@ public class Galva extends Collectie {
     }
 
     @Override
-    public Collectie clone() {
-        return null;
+    public Galva clone() {
+        return new Galva();
     }
 }

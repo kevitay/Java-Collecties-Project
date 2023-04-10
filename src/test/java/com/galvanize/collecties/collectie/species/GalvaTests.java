@@ -66,4 +66,10 @@ public class GalvaTests {
         System.out.println("Wins: " + wins);
         assertTrue(wins > 700 && wins < 800);
     }
+
+    @Test
+    public void shouldNewGalvaOnClone() {
+        Galva clone = galvania.clone();
+        assertNotEquals(clone, galvania);
+    }
 }
