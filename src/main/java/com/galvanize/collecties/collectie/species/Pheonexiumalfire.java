@@ -1,5 +1,6 @@
 package com.galvanize.collecties.collectie.species;
 import com.galvanize.collecties.Biome;
+import com.galvanize.collecties.Game;
 import com.galvanize.collecties.collectie.Collectie;
 import com.galvanize.collecties.collectie.CollectieType;
 
@@ -35,7 +36,8 @@ public class Pheonexiumalfire extends Collectie {
 
     @Override
     public boolean defend(int attackStrength) {
-        return false;
+        if(Game.TEST_MODE) return false;
+        return Game.randogen.nextInt(100) > 50;
     }
 
     @Override
