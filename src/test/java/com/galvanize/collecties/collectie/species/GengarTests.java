@@ -53,6 +53,12 @@ public class GengarTests {
         assertEquals(Biome.BOG, gengar.getPreferredBiome());
     }
 
+    @Test
+    public void shouldHave2AttackPower() {
+        assertEquals(2, gengar.performAttack());
+    }
+
+
 
 
 

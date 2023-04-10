@@ -49,7 +49,7 @@ public class Gengar extends Collectie {
 
     @Override
     public int performAttack() {
-        return 0;
+        return 2;
     }
 
     @Override
