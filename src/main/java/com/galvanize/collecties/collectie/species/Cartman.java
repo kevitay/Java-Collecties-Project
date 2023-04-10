@@ -26,17 +26,17 @@ public class Cartman extends Collectie {
                 "\\____)         .           (____/\n" +
                 "    \\___________.___________/\n" +
                 "      \\___________________/\n" +
-                "jgs  (_____________________)";
+                "      (_____________________)";
     }
 
     @Override
     public Biome getPreferredBiome() {
-        return null;
+        return Biome.MOUNTAIN_RANGE;
     }
 
     @Override
     public int performAttack() {
-        return 0;
+        return 100;
     }
 
     @Override

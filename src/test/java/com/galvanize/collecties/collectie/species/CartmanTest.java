@@ -1,5 +1,6 @@
 package com.galvanize.collecties.collectie.species;
 
+import com.galvanize.collecties.Biome;
 import com.galvanize.collecties.collectie.CollectieType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -40,5 +41,13 @@ public class CartmanTest {
     public void shouldHaveTheCorrectSound(){
         assertEquals("RESPECT MY AUTHORITY", cartman.speak() );
     }
+    @Test
+    public void shouldPreferMountainRangeBiomes(){
+    assertEquals(Biome.MOUNTAIN_RANGE, cartman.getPreferredBiome());
+    }
+@Test
+    public void shouldHave100AttackPower(){
+        assertEquals(100, cartman.performAttack());
+}
 }
 
