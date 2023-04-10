@@ -32,7 +32,7 @@ public class GengarTests {
 
     @Test
     public void shouldBeTypeGhost() {
-        Assertions.assertEquals(CollectieType.GHOST, gengar.getType());
+        assertEquals(CollectieType.GHOST, gengar.getType());
     }
 
     @Test
@@ -65,6 +65,12 @@ public class GengarTests {
         }
         System.out.println("Wins: " + wins);
         assertTrue(wins > 700 && wins < 800);
+    }
+
+    @Test
+    public void shouldNewGengarOnClone() {
+        Gengar clone = gengar.clone();
+        assertNotEquals(clone, gengar);
     }
 
 

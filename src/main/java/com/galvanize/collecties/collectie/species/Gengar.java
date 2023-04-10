@@ -60,8 +60,8 @@ public class Gengar extends Collectie {
     }
 
     @Override
-    public Collectie clone() {
-        return null;
+    public Gengar clone() {
+        return new Gengar();
     }
 
 }
