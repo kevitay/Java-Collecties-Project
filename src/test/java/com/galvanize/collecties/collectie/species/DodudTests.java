@@ -1,5 +1,4 @@
 package com.galvanize.collecties.collectie.species;
-
 import com.galvanize.collecties.Biome;
 import com.galvanize.collecties.collectie.CollectieType;
 import org.junit.jupiter.api.Assertions;
