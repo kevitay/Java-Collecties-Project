@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Collectie: Rex")
+@DisplayName("Collectie: Rextor")
 public class RextoreTests {
 
   Rextore rexxie;
