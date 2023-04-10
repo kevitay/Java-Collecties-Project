@@ -7,6 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @DisplayName("Collectie: Pheonexiumalfire")
 public class PheonexiumalfireTest {
@@ -28,6 +29,12 @@ public class PheonexiumalfireTest {
     @Test
     void shouldBeTypeFIRE() {
         Assertions.assertEquals(CollectieType.FIRE, pheonixy.getType());
+    }
+    @Test
+    public void shouldProvideAGraphic() {
+        String graphic = pheonixy.getGraphic();
+        System.out.println(graphic);
+        assertNotEquals(0, graphic.length());
     }
 
 
