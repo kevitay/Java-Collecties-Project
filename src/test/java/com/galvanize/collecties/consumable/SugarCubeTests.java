@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.collectie.species.Triceratops;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -27,10 +28,16 @@ public class SugarCubeTests {
         assertTrue(sugar.consume());
     }
 
-@Test
+    @Test
     public void shouldShowCubeCountInName() {
         assertTrue(sugar.getName().contains("(2)"));
         sugar.consume();
         assertTrue(sugar.getName().contains("(1)"));
-}
+    }
+
+    @Test
+    public void shouldNewSugarOnClone() {
+        Consumable clone = sugar.clone();
+        assertNotEquals(clone, sugar);
+    }
 }

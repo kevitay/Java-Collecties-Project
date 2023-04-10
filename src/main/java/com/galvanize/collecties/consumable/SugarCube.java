@@ -21,6 +21,6 @@ public class SugarCube implements Consumable {
 
     @Override
     public Consumable clone() {
-        return null;
+        return new SugarCube();
     }
 }
