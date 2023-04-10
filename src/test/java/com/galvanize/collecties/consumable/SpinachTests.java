@@ -20,4 +20,10 @@ public class SpinachTests {
     public void shouldHaveTheRightName() {
         assertEquals("Popeye's brand spinach (2) - gives incredible strength!", spinach.getName());
     }
+
+    @Test
+    public void shouldHave2CansToConsume() {
+        assertFalse(spinach.consume());
+        assertTrue(spinach.consume());
+    }
 }

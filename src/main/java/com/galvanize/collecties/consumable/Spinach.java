@@ -12,7 +12,10 @@ public class Spinach implements Consumable {
 
     @Override
     public boolean consume() {
-        return false;
+        if(cans == 0) return true;
+
+        cans--;
+        return cans == 0;
     }
 
     @Override
