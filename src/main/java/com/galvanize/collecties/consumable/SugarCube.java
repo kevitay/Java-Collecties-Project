@@ -13,7 +13,10 @@ public class SugarCube implements Consumable {
 
     @Override
     public boolean consume() {
-        return false;
+        if (cubes == 0) return true;
+
+        cubes--;
+        return cubes == 0;
     }
 
     @Override

@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Consumable: Sugar Cube")
 public class SugarCubeTests {
@@ -20,4 +20,12 @@ public class SugarCubeTests {
     public void shouldHaveTheRightName() {
         assertEquals("Triceratops Sugar Cubes (2)", sugar.getName());
     }
+
+    @Test
+    public void shouldHave2CubesToConsume() {
+        assertFalse(sugar.consume());
+        assertTrue(sugar.consume());
+    }
+
+
 }
