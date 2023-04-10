@@ -42,12 +42,12 @@ public class Kenny extends Collectie {
 
     @Override
     public Biome getPreferredBiome() {
-        return null;
+        return Biome.MOUNTAIN_RANGE;
     }
 
     @Override
     public int performAttack() {
-        return 0;
+        return 10;
     }
 
     @Override

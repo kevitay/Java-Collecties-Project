@@ -22,12 +22,16 @@ public class KennyTests {
 
     }
 
-
     @Test
     public void shouldProvideAGraphic() {
         String graphic = kenny.getGraphic();
         System.out.println(graphic);
         assertNotEquals(0, graphic.length());
+    }
+
+    @Test
+    public void shouldHaveTheCorrectSound(){
+        assertEquals("WOO-HOO!",kenny.speak());
     }
 
 }
