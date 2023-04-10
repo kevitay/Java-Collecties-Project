@@ -20,6 +20,7 @@ public enum Consumables {
   ENERGY_DRINK(new EnergyDrink()),
   PIZZA(new Pizza()),
   SPINACH(new Spinach()),
+  ANABOLICSTEROIDS(new AnabolicSteroids()),
   PHOENIXWING(new PhoenixWing()),
   NIBBLETS(new Nibblets());
 
