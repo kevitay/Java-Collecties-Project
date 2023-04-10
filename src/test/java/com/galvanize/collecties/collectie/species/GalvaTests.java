@@ -1,5 +1,6 @@
 package com.galvanize.collecties.collectie.species;
 
+import com.galvanize.collecties.collectie.CollectieType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -26,5 +27,10 @@ public class GalvaTests {
     @Test
     public void shouldBeGalvaSpecies() {
         assertEquals("Galva", galvania.getSpecies());
+    }
+
+    @Test
+    public void shouldBeTypeElemental() {
+        assertEquals(CollectieType.ELEMENTAL, galvania.getType());
     }
 }
