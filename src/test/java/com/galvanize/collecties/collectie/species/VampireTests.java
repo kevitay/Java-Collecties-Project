@@ -59,6 +59,9 @@ public class VampireTests {
 
     //public void shouldSuccessfullyDefend80pOfTheTime (){}
 
-    //public void shouldNewVampireOnClone(){}
+    @Test
+    public void shouldNewVampireOnClone(){
+        Assertions.assertNotEquals(testVampire, testVampire.clone());
+    }
 
 }
