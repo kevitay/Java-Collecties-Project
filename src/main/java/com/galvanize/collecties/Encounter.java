@@ -62,10 +62,9 @@ public class Encounter {
     // Notice the static choices defined above are passed here
     printer.formatAsList(battleChoices).print();
 
-    // If the player chooses to attack, do a skirmish
+    // If the player chooses to attack and is conscious, do a skirmish
     // otherwise cheese it
     if (prompt.getChoice(battleChoices.length) == 1 && challenger.getCollectieStatus().equals(CollectieStatus.CONSCIOUS)) {
-// TODO:  Automatically run if unconscious.  Req. 5
       // skirmish returns true if the player wins
       if (skirmish()) {
         printer.multiline(
@@ -86,7 +85,7 @@ public class Encounter {
 
     }
 
-    // If you loose (or run) you cannot keep the wild Collectie
+    // If you lose (or run) you cannot keep the wild Collectie
     // So false is returned for those cases
     return false;
   }
