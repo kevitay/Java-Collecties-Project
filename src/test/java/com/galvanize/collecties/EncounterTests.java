@@ -25,20 +25,6 @@ public class EncounterTests {
     Prompt prompt;
     Collectie challenger;
     Biome biome;
-    @BeforeEach
-    public void setup() {
-        // need a printer
-        // need a prompt
-        // need a Collectie challenger
-        // need a biome
-        printer = new Printer();
-        scanner = new Scanner(System.in);
-        prompt = new Prompt(scanner, printer);
-        // pick a collectie for challenger
-        challenger = new Yeti();
-        biome = Biome.PLAINS;
-        encounter = new Encounter(printer, prompt, challenger, biome);
-    }
 
     public ByteArrayOutputStream runEncounterWithInput(String input) {
         InputStream inputStream;
@@ -71,6 +57,7 @@ public class EncounterTests {
 
     @Test
     public void runAwayWithAttackOfOpportunity() {
+        runEncounterWithInput("");
         int attacks = 0;
         for (int i = 0; i < 1000; i++) {
             if(encounter.attackOfOpportunityLaunched()) attacks++;
