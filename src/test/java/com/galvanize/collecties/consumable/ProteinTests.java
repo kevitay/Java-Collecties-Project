@@ -23,7 +23,7 @@ public class ProteinTests {
             assertFalse(protein.consume());
             assertFalse(protein.consume());
             assertFalse(protein.consume());
-            assertFalse(protein.consume());
+            assertTrue(protein.consume());
         }
 
 
