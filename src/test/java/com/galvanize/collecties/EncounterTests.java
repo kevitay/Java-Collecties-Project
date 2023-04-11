@@ -67,6 +67,14 @@ public class EncounterTests {
         encounter.start();
         displayOutputLines(output.toString());
         String[] outputResult = output.toString().split(System.lineSeparator());
-        assertEquals("?: You cheese it the heckin' out of there.", outputResult[outputResult.length - 1]);
+        assertEquals("You cheese it the heckin' out of there.", outputResult[outputResult.length - 1]);
+    }
+
+    @Test
+    public void runAwayWithAttackOfOpportunity() {
+        ByteArrayOutputStream output = runEncounterWithInput("2\n");
+        encounter.start();
+        displayOutputLines(output.toString());
+        String[] outputResult = output.toString().split(System.lineSeparator());
     }
 }
