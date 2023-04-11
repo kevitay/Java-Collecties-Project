@@ -1,12 +1,12 @@
 package com.galvanize.collecties.collectie;
-
 /*
  * Basic enum representing Collectie types
  */
 public enum CollectieType {
-  DINOSAUR,
-  GHOST,
-  ELEMENTAL,
-  MONSTER,
-  SPECIAL
+    DINOSAUR,
+    GHOST,
+    ELEMENTAL,
+    MONSTER,
+    GOD,
+    SPECIAL
 }
