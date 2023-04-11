@@ -1,5 +1,7 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
+
 public class QuestionableMushroom implements Consumable{
     @Override
     public String getName() {
@@ -14,5 +16,10 @@ public class QuestionableMushroom implements Consumable{
     @Override
     public Consumable clone() {
         return new QuestionableMushroom();
+    }
+
+    @Override
+    public Biome getContainingBiome() {
+        return Biome.WOODLAND;
     }
 }

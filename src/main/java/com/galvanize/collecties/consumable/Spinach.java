@@ -1,5 +1,7 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
+
 public class Spinach implements Consumable {
 
     private int cans = 2;
@@ -21,5 +23,10 @@ public class Spinach implements Consumable {
     @Override
     public Consumable clone() {
         return null;
+    }
+
+    @Override
+    public Biome getContainingBiome() {
+        return Biome.MOUNTAIN_RANGE;
     }
 }

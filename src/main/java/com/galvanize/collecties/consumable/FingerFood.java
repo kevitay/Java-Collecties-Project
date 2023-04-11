@@ -1,5 +1,7 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
+
 public class FingerFood implements Consumable {
 
     private int fingers = 4;
@@ -21,5 +23,10 @@ public class FingerFood implements Consumable {
     @Override
     public Consumable clone() {
         return new FingerFood();
+    }
+
+    @Override
+    public Biome getContainingBiome() {
+        return Biome.SAVANNA;
     }
 }

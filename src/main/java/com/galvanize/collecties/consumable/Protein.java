@@ -1,5 +1,7 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
+
 public class Protein implements Consumable {
 
       private int grams = 4;
@@ -20,6 +22,11 @@ public class Protein implements Consumable {
 
       @Override
       public Consumable clone() { return new Protein(); }
+
+    @Override
+    public Biome getContainingBiome() {
+        return Biome.PLAINS;
+    }
  }
 
 
