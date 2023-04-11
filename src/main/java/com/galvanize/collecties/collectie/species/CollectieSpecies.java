@@ -30,6 +30,10 @@ public enum CollectieSpecies {
     TRICERATOPS(new Triceratops()),
     Quetzalcoatl(new Quetzalcoatl()),
     GALVA(new Galva()),
+    SHAMBLINGZOMBIE(new ShamblingZombie()),
+    SKELETOR(new Skeletor()),
+    KRAKEN(new Kraken()),
+    VAMPIRE(new Vampire()),
     CARTMAN(new Cartman());
 
 
