@@ -13,6 +13,7 @@ import com.galvanize.collecties.collectie.Collectie;
 public enum CollectieSpecies {
 
 
+
     // Each element in this enum requires
     // a reference instance of the class
     // it represents
@@ -32,7 +33,9 @@ public enum CollectieSpecies {
     SHAMBLINGZOMBIE(new ShamblingZombie()),
     SKELETOR(new Skeletor()),
     KRAKEN(new Kraken()),
-    VAMPIRE(new Vampire());
+    VAMPIRE(new Vampire()),
+    CARTMAN(new Cartman());
+
 
     /*
      * Enums can actually have a constructor
