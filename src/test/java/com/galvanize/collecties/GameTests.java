@@ -70,7 +70,11 @@ public class GameTests {
 
     @Test
     public void collectConsumable() {
-        hookIntoRandom("[1, 10001, 51, 0, 1, 10]");
+        // 1 - Taiga is picked as BIOME
+        // 10001 - Random number given to first Collectie
+        // 51 - Exploring goes to findConsumable logic
+        // 0 - Finds first Consumable in this BIOME
+        hookIntoRandom("[1, 10001, 51, 0]");
         disableGameSleep();
         String output = runGameWithInput("n", "2", "4");
         enableGameSleep();
@@ -80,7 +84,13 @@ public class GameTests {
 
     @Test
     public void fightCollectieAndWin() {
-        hookIntoRandom("[11, 10001, 1, 0, 1, 11]");
+        // 11 - VOLCANIC is picked as BIOME
+        // 10001 - Random number given to first Collectie
+        // 1 - Exploring goes to encounter logic
+        // 0 - Finds first Collectie in this BIOME
+        // 10002 - Random number given to cloned Collectie
+        // 11 - Roll below 50 for Rextor to win
+        hookIntoRandom("[11, 10001, 1, 0, 10002, 11]");
         disableGameSleep();
         String output = runGameWithInput("n", "2", "1", "n", "4");
         enableGameSleep();
@@ -90,7 +100,14 @@ public class GameTests {
 
     @Test
     public void bothMiss() {
-        hookIntoRandom("[11, 10001, 1, 0, 1, 51, 51]");
+        // 11 - VOLCANIC is picked as BIOME
+        // 10001 - Random number given to first Collectie
+        // 1 - Exploring goes to encounter logic
+        // 0 - Finds first Collectie in this BIOME
+        // 10002 - Random number given to cloned Collectie
+        // 51 - our Rextore misses
+        // 51 - other Rextore misses
+        hookIntoRandom("[11, 10001, 1, 0, 10002, 51, 51]");
         disableGameSleep();
         String output = runGameWithInput("n", "2", "1", "4");
         enableGameSleep();
@@ -101,7 +118,14 @@ public class GameTests {
 
     @Test
     public void fightWithMissThenGetHit() {
-        hookIntoRandom("[11, 10001, 1, 0, 1, 51, 1]");
+        // 11 - VOLCANIC is picked as BIOME
+        // 10001 - Random number given to first Collectie
+        // 1 - Exploring goes to encounter logic
+        // 0 - Finds first Collectie in this BIOME
+        // 10002 - Random number given to cloned Collectie
+        // 51 - our Rextore misses
+        // 1 - other Rextore hits
+        hookIntoRandom("[11, 10001, 1, 0, 10002, 51, 1]");
         disableGameSleep();
         String output = runGameWithInput("n", "2", "1", "4");
         enableGameSleep();
