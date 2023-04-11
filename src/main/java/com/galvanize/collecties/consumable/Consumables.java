@@ -27,13 +27,14 @@ public enum Consumables {
   NIBBLETS(new Nibblets()),
   BANANAS(new Bananas()),
   SPINACH(new Spinach()),
+  FROZEN_WAFFLE (new FrozenWaffle()),
   SUGAR_CUBE(new SugarCube()),
+  PROTEIN(new Protein()),
   MILK(new Milk()),
   FINGERFOOD(new FingerFood()),
   TRUBLOOD(new TruBlood()),
-  DINGHY (new Dinghy());
-
-
+  DINGHY (new Dinghy()),
+  CHEESYPOOFS (new CheesyPoofs());
 
 
   // Create a static array of all the Consumables
