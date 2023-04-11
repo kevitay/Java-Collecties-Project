@@ -28,4 +28,14 @@ public class CollectieTests {
     Collectie randomCollectie = Collectie.getRandomCollectieForBiome(Collectie.getRandomNonEmptyBiome());
     Assertions.assertEquals(CollectieStatus.CONSCIOUS, randomCollectie.getCollectieStatus());
   }
+
+  @Test
+  public void canUpdateCollectieConsciousStatus() {
+    Collectie randomCollectie = Collectie.getRandomCollectieForBiome(Collectie.getRandomNonEmptyBiome());
+    Assertions.assertEquals(CollectieStatus.CONSCIOUS, randomCollectie.getCollectieStatus());
+    randomCollectie.setCollectieStatus(CollectieStatus.UNCONSCIOUS);
+    Assertions.assertEquals(CollectieStatus.UNCONSCIOUS, randomCollectie.getCollectieStatus());
+    randomCollectie.setCollectieStatus(CollectieStatus.CONSCIOUS);
+    Assertions.assertEquals(CollectieStatus.CONSCIOUS, randomCollectie.getCollectieStatus());
+  }
 }

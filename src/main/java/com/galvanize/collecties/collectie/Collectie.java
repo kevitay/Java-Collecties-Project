@@ -114,6 +114,9 @@ public abstract class Collectie {
     return this.collectieStatus;
   }
 
+  public void setCollectieStatus(CollectieStatus status) {
+    this.collectieStatus = status;
+  }
   /*
    * Use the class name as the species name
    * this works with subclasses even though
@@ -163,4 +166,6 @@ public abstract class Collectie {
   // Clone should be used to return a new instance of the child class
   // IE myRextore.clone() != myRextore and rexClone is a Rextore instance
   public abstract Collectie clone();
+
+
 }
