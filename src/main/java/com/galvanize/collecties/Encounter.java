@@ -80,9 +80,11 @@ public class Encounter {
             // Attacks on Run
             // add a 50% chance that the opponent will get an "attack of opportunity"
             // when the player runs from an encounter
-            if (true) { // add random chance here later
+            if (false) { // add random chance here later
                 // attackOfOpportunity returns true if the player survives
                 attackOfOpportunity();
+            } else {
+              printer.print("You cheese it the heckin' out of there.");
             }
         }
 
@@ -93,7 +95,7 @@ public class Encounter {
 
     private boolean attackOfOpportunity() {
       printer.print(
-              "The wild %s attacks %s!",
+              "The wild %s attacks %s as you run away!",
               opponent.getSpecies(),
               challenger.getName()
       );
@@ -103,7 +105,7 @@ public class Encounter {
                             "%s survives the blow!"
                     )
                     .print(challenger.getName());
-        printer.print("You cheese it the heckin' out of there.");
+        printer.print("?: You cheese it the heckin' out of there.");
             return true;
         } else {
 
@@ -112,7 +114,7 @@ public class Encounter {
                             "%s has fallen!"
                     )
                     .print(challenger.getName());
-        printer.print("You cheese it the heckin' out of there.");
+        printer.print("?: You cheese it the heckin' out of there.");
             return false;
         }
     }
