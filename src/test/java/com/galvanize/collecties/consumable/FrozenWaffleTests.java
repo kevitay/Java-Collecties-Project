@@ -15,4 +15,12 @@ public class FrozenWaffleTests {
     public void testSetup() {
         frozenwaffle = new FrozenWaffle();
     }
+
+    @Test
+    public void shouldHaveTheRightName() {
+        assertEquals("Frozen waffle without any side dishes", frozenwaffle.getName());
+    }
+
+
+
 }
