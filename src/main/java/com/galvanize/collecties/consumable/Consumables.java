@@ -47,22 +47,28 @@ public enum Consumables {
    * Use the consumables array to easily get a random consumable
    */
   public static Consumable getRandomConsumable(Biome biome) {
+    for (int i = 0; i < consumablesArray.length; i++) {
+      if(biome == consumablesArray[i].getReference().getContainingBiome()){
+        for (int j = 0; j < 1; j++) {
+          Consumable randomConsumable = consumablesArray[Game.randogen.nextInt(consumablesArray.length)]
+                  .getReference()
+                  .clone();
 
-    Consumable randomConsumable = null;
-//    while (biome != randomConsumable.getContainingBiome()){
-    for (int i = 0; i < 1; i++) {
-      randomConsumable = consumablesArray[Game.randogen.nextInt(consumablesArray.length)]
-              .getReference()
-              .clone();
-
-      if(biome == randomConsumable.getContainingBiome()){
-        return randomConsumable;
-      } else {
-        i--;
+          if(biome == randomConsumable.getContainingBiome()){
+            return randomConsumable;
+          } else {
+            j--;
+          }
+        }
       }
     }
-    return randomConsumable;
+    return null;
   }
+
+
+
+
+
 
   /*
    * Enums can actually have a constructor

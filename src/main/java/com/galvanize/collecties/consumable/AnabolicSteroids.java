@@ -22,6 +22,6 @@ public class AnabolicSteroids implements Consumable{
 
     @Override
     public Biome getContainingBiome() {
-        return Biome.BOG;
+        return Biome.VOLCANIC;
     }
 }

@@ -17,6 +17,12 @@ public class ConsumablesTests {
   }
 
   @Test
+  public void returnNullForNonmatchingBiome(){
+    Consumable consumable = Consumables.getRandomConsumable(Biome.BOG);
+    assertEquals(null, consumable);
+  }
+
+  @Test
   public void shouldReturnBiomeForBananasConsumable() {
     Bananas banana = new Bananas();
     assertEquals(Biome.RAINFOREST, banana.getContainingBiome());
