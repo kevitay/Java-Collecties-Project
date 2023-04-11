@@ -26,6 +26,7 @@ public enum Consumables {
   KONA_COFFEE(new KonaCoffee()),
   BANANAS(new Bananas()),
   SPINACH(new Spinach()),
+  FROZEN_WAFFLE (new FrozenWaffle()),
   SUGAR_CUBE(new SugarCube());
 
 
