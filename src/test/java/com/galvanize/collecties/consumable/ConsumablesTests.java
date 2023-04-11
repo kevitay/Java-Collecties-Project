@@ -10,14 +10,22 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ConsumablesTests {
 
   @Test
-  public void shouldBeAbleToGetRandomConsumable() {
-    Consumable consumable = Consumables.getRandomConsumable();
-    assertNotNull(consumable);
+  public void shouldBeAbleToGetRandomConsumableThatMatchesBiome() {
+    Consumable consumable = Consumables.getRandomConsumable(Biome.MOUNTAIN_RANGE);
+//    assertNotNull(consumable);
+    assertEquals(Biome.MOUNTAIN_RANGE, consumable.getContainingBiome());
   }
 
   @Test
-  public void shouldReturnBiomeForConsumable() {
+  public void shouldReturnBiomeForBananasConsumable() {
     Bananas banana = new Bananas();
     assertEquals(Biome.RAINFOREST, banana.getContainingBiome());
+  }
+
+  @Test
+  public void shouldReturnConsumableForBiome(){
+    Bananas banana = new Bananas();
+    Biome biome = Biome.RAINFOREST;
+    assertEquals(banana.getContainingBiome(), biome);
   }
 }

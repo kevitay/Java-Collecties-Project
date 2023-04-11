@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import com.galvanize.collecties.Game;
 
 /*
@@ -45,10 +46,22 @@ public enum Consumables {
   /*
    * Use the consumables array to easily get a random consumable
    */
-  public static Consumable getRandomConsumable() {
-    return consumablesArray[Game.randogen.nextInt(consumablesArray.length)]
-      .getReference()
-      .clone();
+  public static Consumable getRandomConsumable(Biome biome) {
+
+    Consumable randomConsumable = null;
+//    while (biome != randomConsumable.getContainingBiome()){
+    for (int i = 0; i < 1; i++) {
+      randomConsumable = consumablesArray[Game.randogen.nextInt(consumablesArray.length)]
+              .getReference()
+              .clone();
+
+      if(biome == randomConsumable.getContainingBiome()){
+        return randomConsumable;
+      } else {
+        i--;
+      }
+    }
+    return randomConsumable;
   }
 
   /*

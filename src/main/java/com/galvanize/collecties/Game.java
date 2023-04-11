@@ -195,14 +195,14 @@ public class Game {
    * Get a random consumable and add it to the inventory
    */
   private void findConsumable() {
-    Consumable foundConsumable = Consumables.getRandomConsumable();
+//    Consumable foundConsumable = Consumables.getRandomConsumable();
 
-    collection.addConsumable(foundConsumable);
-
-    printer.multiline(
-      "You found a %s while exploring.",
-      "It has been added to your consumables."
-    )
-    .print(foundConsumable.getName());
+//    collection.addConsumable(foundConsumable);
+//
+//    printer.multiline(
+//      "You found a %s while exploring.",
+//      "It has been added to your consumables."
+//    )
+//    .print(foundConsumable.getName());
   }
 }
