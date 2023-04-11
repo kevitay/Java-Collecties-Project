@@ -21,9 +21,7 @@ public enum Consumables {
   PIZZA(new Pizza()),
   COFFEE_DRINK(new CoffeeDrink()),
   KONA_COFFEE(new KonaCoffee()),
-
   VEGAN_HOTDOGS(new VeganHotdogs()),
-
   ANABOLICSTEROIDS(new AnabolicSteroids()),
   PHOENIXWING(new PhoenixWing()),
   NIBBLETS(new Nibblets()),
