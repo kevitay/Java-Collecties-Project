@@ -11,6 +11,8 @@ import com.galvanize.collecties.collectie.Collectie;
  * Basically we are creating a static list for all species
  */
 public enum CollectieSpecies {
+
+
     // Each element in this enum requires
     // a reference instance of the class
     // it represents
@@ -18,14 +20,15 @@ public enum CollectieSpecies {
     REXTORE(new Rextore()),
     DODUD(new Dodud()),
     STANLEY(new Stanley()),
+    KENNY(new Kenny()),
     Batman(new Batman()),
     INFERNIA(new Infernia()),
     BOOGIEWOOGIE(new BoogieWoogie()),
     GENGAR(new Gengar()),
     FLUKOGUIN(new Flukoguin()),
     TRICERATOPS(new Triceratops()),
+    Quetzalcoatl(new Quetzalcoatl()),
     GALVA(new Galva());
-
 
     /*
      * Enums can actually have a constructor
