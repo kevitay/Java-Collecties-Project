@@ -21,12 +21,17 @@ public enum Consumables {
   PIZZA(new Pizza()),
   COFFEE_DRINK(new CoffeeDrink()),
   KONA_COFFEE(new KonaCoffee()),
+
   ANABOLICSTEROIDS(new AnabolicSteroids()),
   PHOENIXWING(new PhoenixWing()),
   NIBBLETS(new Nibblets()),
   BANANAS(new Bananas()),
   SPINACH(new Spinach()),
-  SUGAR_CUBE(new SugarCube());
+  SUGAR_CUBE(new SugarCube()),
+  MILK(new Milk()),
+  FINGERFOOD(new FingerFood()),
+  TRUBLOOD(new TruBlood()),
+  DINGHY (new Dinghy());
 
 
 
