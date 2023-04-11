@@ -82,6 +82,7 @@ public class Encounter {
       // add a 50% chance that the opponent will get an "attack of opportunity"
       // when the player runs from an encounter
 
+
     }
 
     // If you loose (or run) you cannot keep the wild Collectie
