@@ -29,7 +29,8 @@ public enum Consumables {
   MILK(new Milk()),
   FINGERFOOD(new FingerFood()),
   TRUBLOOD(new TruBlood()),
-  DINGHY (new Dinghy());
+  DINGHY (new Dinghy()),
+  CHEESYPOOFS (new CheesyPoofs());
 
 
 
