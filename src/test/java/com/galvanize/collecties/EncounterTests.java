@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 
+import static com.galvanize.collecties.GameHelper.displayOutputLines;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -40,7 +41,7 @@ public class EncounterTests {
         encounter = new Encounter(printer, prompt, challenger, biome);
     }
 
-    public String runEncounterWithInput(String input) {
+    public ByteArrayOutputStream runEncounterWithInput(String input) {
         InputStream inputStream;
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(outputStream);
@@ -52,17 +53,20 @@ public class EncounterTests {
         biome = Biome.PLAINS;
         encounter = new Encounter(printer, prompt, challenger, biome);
 
-        return outputStream.toString();
+        return outputStream;
     }
     @Test
-    public void testSetup() {
+    public void opponentForEncounter() {
         runEncounterWithInput("");
         assertNotNull(encounter.getOpponent());
     }
 
     @Test
-    public void attackOfOpportunity() {
-
-        System.out.println(encounter.start());
+    public void runAwaySuccessfullyFirst() {
+        ByteArrayOutputStream output = runEncounterWithInput("2\n");
+        encounter.start();
+        displayOutputLines(output.toString());
+        String[] outputResult = output.toString().split(System.lineSeparator());
+        assertEquals("?: You cheese it the heckin' out of there.", outputResult[outputResult.length - 1]);
     }
 }
