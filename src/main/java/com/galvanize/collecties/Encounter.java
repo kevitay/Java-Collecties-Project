@@ -80,7 +80,7 @@ public class Encounter {
             // Attacks on Run
             // add a 50% chance that the opponent will get an "attack of opportunity"
             // when the player runs from an encounter
-            if (false) { // add random chance here later
+            if (attackOfOpportunityLaunched()) { // add random chance here later
                 // attackOfOpportunity returns true if the player survives
                 attackOfOpportunity();
             } else {
@@ -91,6 +91,14 @@ public class Encounter {
         // If you loose (or run) you cannot keep the wild Collectie
         // So false is returned for those cases
         return false;
+    }
+
+    public boolean attackOfOpportunityLaunched() {
+        if(Math.random()*1000 > 500) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     private boolean attackOfOpportunity() {

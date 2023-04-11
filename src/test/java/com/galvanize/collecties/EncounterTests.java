@@ -15,8 +15,7 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 import static com.galvanize.collecties.GameHelper.displayOutputLines;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Encounter")
 public class EncounterTests {
@@ -72,9 +71,11 @@ public class EncounterTests {
 
     @Test
     public void runAwayWithAttackOfOpportunity() {
-        ByteArrayOutputStream output = runEncounterWithInput("2\n");
-        encounter.start();
-        displayOutputLines(output.toString());
-        String[] outputResult = output.toString().split(System.lineSeparator());
+        int attacks = 0;
+        for (int i = 0; i < 1000; i++) {
+            if(encounter.attackOfOpportunityLaunched()) attacks++;
+        }
+        System.out.println("Attacks of Opportunity: " + attacks);
+        assertTrue(attacks > 450 && attacks < 550);
     }
 }
