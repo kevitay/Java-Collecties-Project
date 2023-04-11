@@ -98,6 +98,7 @@ public abstract class Collectie {
   private final CollectieType type;
   private String name;
   private final String sound;
+  // TODO:  Add status field.  Req 2.
 
   /*
    * Basic constructor except all Collecties start with a

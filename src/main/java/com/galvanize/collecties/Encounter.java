@@ -64,7 +64,7 @@ public class Encounter {
     // If the player chooses to attack, do a skirmish
     // otherwise cheese it
     if (prompt.getChoice(battleChoices.length) == 1) {
-
+// TODO:  Automatically run if unconscious.  Req. 5
       // skirmish returns true if the player wins
       if (skirmish()) {
         printer.multiline(
@@ -121,7 +121,7 @@ public class Encounter {
         )
         .print(challenger.getName());
       } else {
-
+    // TODO:  Set character unconscious.  Req 4
         printer.multiline(
           "", //Add space before
           "%s has fallen!"
