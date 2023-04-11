@@ -64,7 +64,7 @@ public class Encounter {
 
     // If the player chooses to attack, do a skirmish
     // otherwise cheese it
-    if (prompt.getChoice(battleChoices.length) == 1) {
+    if (prompt.getChoice(battleChoices.length) == 1 && challenger.getCollectieStatus().equals(CollectieStatus.CONSCIOUS)) {
 // TODO:  Automatically run if unconscious.  Req. 5
       // skirmish returns true if the player wins
       if (skirmish()) {

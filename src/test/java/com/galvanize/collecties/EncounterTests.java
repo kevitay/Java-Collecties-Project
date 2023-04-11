@@ -89,6 +89,22 @@ public class EncounterTests {
         assertEquals(CollectieStatus.UNCONSCIOUS, duddy.getCollectieStatus());
     }
 
+    // If you attempt to go into battle with an unconscious protector,
+    // you should automatically run from the encounter.
+    @Test
+    public void battleWithUnconsciousMakesPlayerRun() {
+        Biome biome = Collectie.getRandomNonEmptyBiome();
+        Collectie randomCollectie = Collectie.getRandomCollectieForBiome(biome);
+        randomCollectie.setCollectieStatus(CollectieStatus.UNCONSCIOUS);
+
+        ByteArrayOutputStream output = runEncounterWithInput("1\n", biome, randomCollectie);
+        encounter.start();
+        displayOutputLines(output.toString());
+        String[] outputResult = output.toString().split(System.lineSeparator());
+
+        assertEquals("?: You cheese it the heckin' out of there.", outputResult[outputResult.length - 1]);
+    }
+
     @Test
     public void opponentForEncounter() {
         runEncounterWithInput("");
