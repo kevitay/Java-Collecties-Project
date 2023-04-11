@@ -1,6 +1,7 @@
 package com.galvanize.collecties.collectie;
 
 import com.galvanize.collecties.Biome;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -20,5 +21,11 @@ public class CollectieTests {
   public void shouldBeAbleToGetABiomeWithCollectiesAssignedToIt() {
     Biome randomBiome = Collectie.getRandomNonEmptyBiome();
     assertNotEquals(0, Collectie.speciesByBiomeReference.get(randomBiome).size());
+  }
+
+  @Test
+  public void defaultStatusShouldBeConscious() {
+    Collectie randomCollectie = Collectie.getRandomCollectieForBiome(Collectie.getRandomNonEmptyBiome());
+    Assertions.assertEquals(CollectieStatus.CONSCIOUS, randomCollectie.getCollectieStatus());
   }
 }

@@ -98,7 +98,7 @@ public abstract class Collectie {
   private final CollectieType type;
   private String name;
   private final String sound;
-  // TODO:  Add status field.  Req 2.
+  private CollectieStatus collectieStatus = CollectieStatus.CONSCIOUS;
 
   /*
    * Basic constructor except all Collecties start with a
@@ -108,6 +108,10 @@ public abstract class Collectie {
     this.name = this.getSpecies() + " " + Game.randogen.nextInt();
     this.type = type;
     this.sound = sound;
+  }
+
+  public CollectieStatus getCollectieStatus() {
+    return this.collectieStatus;
   }
 
   /*
