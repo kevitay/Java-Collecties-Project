@@ -38,7 +38,8 @@ public class SkeletorTest {
     @Test
     public void shouldProvidetheGraphic() {
         String graphic = skeletor.getGraphic();
-        Assertions.assertNotEquals(0, graphic.length());
+        System.out.println(graphic);
+        Assertions.assertNotEquals(0, skeletor.getGraphic().length());
     }
 
     @Test
