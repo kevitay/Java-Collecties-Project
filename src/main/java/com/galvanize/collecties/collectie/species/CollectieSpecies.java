@@ -13,6 +13,7 @@ import com.galvanize.collecties.collectie.Collectie;
 public enum CollectieSpecies {
 
 
+
     // Each element in this enum requires
     // a reference instance of the class
     // it represents
@@ -28,7 +29,10 @@ public enum CollectieSpecies {
     FLUKOGUIN(new Flukoguin()),
     TRICERATOPS(new Triceratops()),
     PHEONEXIUMALFIRE(new Pheonexiumalfire()),
-    GALVA(new Galva());
+    Quetzalcoatl(new Quetzalcoatl()),
+    GALVA(new Galva()),
+    CARTMAN(new Cartman());
+
 
 
 
