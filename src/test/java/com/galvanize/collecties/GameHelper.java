@@ -1,6 +1,7 @@
 package com.galvanize.collecties;
 
 import com.galvanize.collecties.Game;
+import com.galvanize.collecties.collectie.utils.RandomPlayback;
 import com.galvanize.collecties.utils.terminal.Printer;
 import com.galvanize.collecties.utils.terminal.Prompt;
 
@@ -14,6 +15,8 @@ import java.util.Scanner;
 
 public class GameHelper {
     private static boolean testMode = false;
+    private static RandomPlayback fakeRandom;
+    private static Random originalRandom;
 
     public static void disableGameSleep() {
         testMode = true;
@@ -21,6 +24,13 @@ public class GameHelper {
 
     public static void enableGameSleep() {
         testMode = false;
+    }
+    public static void hookIntoRandom() {
+        hookIntoRandom("[]");
+    }
+    public static void hookIntoRandom(String sequence) {
+        GameHelper.fakeRandom = new RandomPlayback();
+        GameHelper.fakeRandom.setSequence(sequence);
     }
 
     public static String runGameWithInput(String ...input) {
@@ -43,7 +53,16 @@ public class GameHelper {
         if(testMode) {
             printer.disableSleep();
         }
+        if(GameHelper.fakeRandom != null) {
+            GameHelper.originalRandom = Game.randogen;
+            Game.randogen = fakeRandom;
+        }
         game.start();
+        if(GameHelper.fakeRandom != null) {
+            System.out.println(fakeRandom.getGeneratedValues());
+            Game.randogen = GameHelper.originalRandom;
+            GameHelper.fakeRandom = null;
+        }
         return outputStream.toString();
     }
 

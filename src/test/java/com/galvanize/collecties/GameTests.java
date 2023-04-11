@@ -56,8 +56,19 @@ public class GameTests {
 
     @Test
     public void attemptToFeedCollectieWithNoConsumables() {
+        hookIntoRandom();
         String output = runGameWithInput("y", "Rextor", "y", "3", "3", "1", "6", "4");
         displayOutputLines(output);
         Assertions.assertEquals("?: You have no consumables to feed Rextor!", output.split(System.lineSeparator())[26]);
+    }
+
+    @Test
+    public void collectConsumable() {
+        hookIntoRandom("[284789078, 57, 4]");
+        disableGameSleep();
+        String output = runGameWithInput("n", "2", "4");
+        enableGameSleep();
+        displayOutputLines(output);
+        Assertions.assertEquals("You found a A fire roasted Phoenix wing (3) while exploring.", output.split(System.lineSeparator())[14]);
     }
 }
