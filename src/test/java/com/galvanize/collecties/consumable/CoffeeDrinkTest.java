@@ -18,7 +18,7 @@ public class CoffeeDrinkTest {
 
     @Test
     public void shouldHaveTheRightName(){
-        assertEquals("Cartman's Super Terrific Coffee", drink.getName());
+        assertEquals("Cartman's Super Terrific Coffee!", drink.getName());
     }
     @Test
     public void shouldOnlyHaveOneUsage(){
