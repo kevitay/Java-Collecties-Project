@@ -10,7 +10,12 @@ public class CheesyPoofs implements Consumable{
 
     @Override
     public boolean consume() {
-        return false;
+        if (poofs == 0) {
+            return true;
+        }
+        poofs--;
+
+        return poofs == 0;
     }
 
     @Override
