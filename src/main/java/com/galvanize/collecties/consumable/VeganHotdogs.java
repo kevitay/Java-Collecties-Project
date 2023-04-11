@@ -1,6 +1,8 @@
 package com.galvanize.collecties.consumable;
 
 public class VeganHotdogs implements Consumable{
+
+    private int veganHotdogs = 2;
     @Override
     public String getName() {
         return "VeganHotdogs";
@@ -8,7 +10,10 @@ public class VeganHotdogs implements Consumable{
 
     @Override
     public boolean consume() {
-        return true;
+        if (veganHotdogs == 0) return true;
+
+        veganHotdogs--;
+        return veganHotdogs == 0;
     }
 
     @Override

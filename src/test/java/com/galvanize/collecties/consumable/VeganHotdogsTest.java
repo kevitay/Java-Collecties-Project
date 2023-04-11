@@ -25,8 +25,9 @@ public class VeganHotdogsTest {
 
     @Test
     public void shouldHaveVeganHotDogsToConsume() {
-       assertFalse((Boolean) veganHotdogs.consume());
-       assertTrue((Boolean) veganHotdogs.consume());
+       assertFalse(veganHotdogs.consume());
+       assertTrue(veganHotdogs.consume());
+
 
 
     }
