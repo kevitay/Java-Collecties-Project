@@ -8,5 +8,7 @@ public enum CollectieType {
     ELEMENTAL,
     MONSTER,
     GOD,
+    FIRE,
+
     SPECIAL
 }
