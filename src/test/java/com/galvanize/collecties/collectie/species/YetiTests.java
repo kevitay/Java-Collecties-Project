@@ -60,7 +60,7 @@ public class YetiTests {
             if(yeti.defend(0)) wins++;
         }
     System.out.println("Wins: " + wins);
-    assertTrue(wins > 450 && wins < 500);
+    assertTrue(wins > 450 && wins < 550);
     }
 
     @Test

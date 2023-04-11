@@ -27,6 +27,7 @@ public enum Consumables {
   SPINACH(new Spinach()),
   FROZEN_WAFFLE (new FrozenWaffle()),
   SUGAR_CUBE(new SugarCube()),
+  PROTEIN(new Protein()),
   MILK(new Milk()),
   FINGERFOOD(new FingerFood()),
   TRUBLOOD(new TruBlood()),
