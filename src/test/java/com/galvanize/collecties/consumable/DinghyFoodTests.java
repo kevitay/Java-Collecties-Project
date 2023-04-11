@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@DisplayName("Consumable: Dingy")
+@DisplayName("Consumable: Dinghy")
 public class DinghyFoodTests {
 
     Dinghy food;
