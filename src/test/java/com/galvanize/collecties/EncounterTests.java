@@ -1,6 +1,8 @@
 package com.galvanize.collecties;
 
 import com.galvanize.collecties.collectie.Collectie;
+import com.galvanize.collecties.collectie.CollectieStatus;
+import com.galvanize.collecties.collectie.species.Dodud;
 import com.galvanize.collecties.collectie.species.Yeti;
 import com.galvanize.collecties.utils.terminal.Printer;
 import com.galvanize.collecties.utils.terminal.Prompt;
@@ -55,6 +57,38 @@ public class EncounterTests {
 
         return outputStream;
     }
+        //Overloaded the run encounter with input to accept Biome & Collectie
+    public ByteArrayOutputStream runEncounterWithInput(String input, Biome biome, Collectie challenger) {
+        InputStream inputStream;
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PrintStream printStream = new PrintStream(outputStream);
+        inputStream = new ByteArrayInputStream(input.getBytes());
+        Printer printer = new Printer(printStream);
+        Scanner scanner = new Scanner(inputStream);
+        Prompt prompt = new Prompt(scanner, printer);
+        //challenger = new Yeti();
+        //biome = Biome.PLAINS;
+        encounter = new Encounter(printer, prompt, challenger, biome);
+
+        return outputStream;
+    }
+
+    @Test
+    public void changeStatusToUnconsciousOnDefeat() {
+        //setup
+        Dodud duddy = new Dodud();
+        Biome biome = Collectie.getRandomNonEmptyBiome();
+
+        //execution
+        ByteArrayOutputStream output = runEncounterWithInput("1\n", biome, duddy); //ATTACK!
+        encounter.start();
+        displayOutputLines(output.toString());
+        String[] outputResult = output.toString().split(System.lineSeparator());
+        System.out.println(outputResult);
+        //assertion
+        assertEquals(CollectieStatus.UNCONSCIOUS, duddy.getCollectieStatus());
+    }
+
     @Test
     public void opponentForEncounter() {
         runEncounterWithInput("");

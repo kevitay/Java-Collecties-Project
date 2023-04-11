@@ -1,6 +1,7 @@
 package com.galvanize.collecties;
 
 import com.galvanize.collecties.collectie.Collectie;
+import com.galvanize.collecties.collectie.CollectieStatus;
 import com.galvanize.collecties.utils.terminal.Printer;
 import com.galvanize.collecties.utils.terminal.Prompt;
 
@@ -126,7 +127,7 @@ public class Encounter {
         )
         .print(challenger.getName());
       } else {
-    // TODO:  Set character unconscious.  Req 4
+        challenger.setCollectieStatus(CollectieStatus.UNCONSCIOUS);
         printer.multiline(
           "", //Add space before
           "%s has fallen!"
