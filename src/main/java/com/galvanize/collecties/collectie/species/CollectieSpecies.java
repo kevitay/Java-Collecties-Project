@@ -28,9 +28,16 @@ public enum CollectieSpecies {
     GENGAR(new Gengar()),
     FLUKOGUIN(new Flukoguin()),
     TRICERATOPS(new Triceratops()),
+    PHEONEXIUMALFIRE(new Pheonexiumalfire()),
     Quetzalcoatl(new Quetzalcoatl()),
     GALVA(new Galva()),
+    SHAMBLINGZOMBIE(new ShamblingZombie()),
+    SKELETOR(new Skeletor()),
+    KRAKEN(new Kraken()),
+    VAMPIRE(new Vampire()),
     CARTMAN(new Cartman());
+
+
 
 
     /*
