@@ -1,5 +1,5 @@
 package com.galvanize.collecties.collectie.species;
-
+package com.galvanize.collecties.consumable;
 import com.galvanize.collecties.Biome;
 import com.galvanize.collecties.Game;
 import com.galvanize.collecties.collectie.Collectie;

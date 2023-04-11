@@ -11,6 +11,9 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+
     //https://junit-pioneer.org/docs/
     testCompile 'org.junit-pioneer:junit-pioneer:1.4+'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
