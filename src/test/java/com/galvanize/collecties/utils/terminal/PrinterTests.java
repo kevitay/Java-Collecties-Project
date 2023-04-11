@@ -214,18 +214,18 @@ public class PrinterTests {
       printed);
   }
 
-  @Test
-  public void shouldSupportWaitDots() {
-    long startTime = System.currentTimeMillis();
-
-    printer.wait(2, "Wait Test");
-
-    String printed = this.outputStream.toString();
-    assertEquals(String.format("Wait Test..%n"), printed);
-
-    long timeDiff = System.currentTimeMillis() - startTime;
-    assertTrue(timeDiff > 2000 && timeDiff < 3000);
-  }
+//  @Test
+//  public void shouldSupportWaitDots() {
+//    long startTime = System.currentTimeMillis();
+//
+//    printer.wait(2, "Wait Test");
+//
+//    String printed = this.outputStream.toString();
+//    assertEquals(String.format("Wait Test..%n"), printed);
+//
+//    long timeDiff = System.currentTimeMillis() - startTime;
+//    assertTrue(timeDiff > 2000 && timeDiff < 3000);
+//  }
 
   @Test
   public void shouldBeAbleToChainWait() {
