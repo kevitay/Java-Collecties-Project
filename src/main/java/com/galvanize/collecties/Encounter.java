@@ -78,6 +78,11 @@ public class Encounter {
       }
     } else {
       printer.print("You cheese it the heckin' out of there.");
+      // Attacks on Run
+      // add a 50% chance that the opponent will get an "attack of opportunity"
+      // when the player runs from an encounter
+
+
     }
 
     // If you loose (or run) you cannot keep the wild Collectie
