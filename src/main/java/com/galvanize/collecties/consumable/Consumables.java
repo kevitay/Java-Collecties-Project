@@ -19,19 +19,22 @@ public enum Consumables {
   QUESTIONABLE_MUSHROOM(new QuestionableMushroom()),
   ENERGY_DRINK(new EnergyDrink()),
   PIZZA(new Pizza()),
+  COFFEE_DRINK(new CoffeeDrink()),
+  KONA_COFFEE(new KonaCoffee()),
+
   ANABOLICSTEROIDS(new AnabolicSteroids()),
   PHOENIXWING(new PhoenixWing()),
   NIBBLETS(new Nibblets()),
-  KONA_COFFEE(new KonaCoffee()),
   BANANAS(new Bananas()),
   SPINACH(new Spinach()),
+  FROZEN_WAFFLE (new FrozenWaffle()),
   SUGAR_CUBE(new SugarCube()),
+  PROTEIN(new Protein()),
   MILK(new Milk()),
   FINGERFOOD(new FingerFood()),
   TRUBLOOD(new TruBlood()),
-  DINGHY (new Dinghy());
-
-
+  DINGHY (new Dinghy()),
+  CHEESYPOOFS (new CheesyPoofs());
 
 
   // Create a static array of all the Consumables

@@ -14,7 +14,9 @@ public enum CollectieSpecies {
 
 
 
-    // Each element in this enum requires
+
+
+   // Each element in this enum requires
     // a reference instance of the class
     // it represents
     // SPECIES(new Species()) / KEY(ReferenceValue)
@@ -28,14 +30,15 @@ public enum CollectieSpecies {
     GENGAR(new Gengar()),
     FLUKOGUIN(new Flukoguin()),
     TRICERATOPS(new Triceratops()),
-    Quetzalcoatl(new Quetzalcoatl()),
+
     GALVA(new Galva()),
+    PHEONEXIUMALFIRE(new Pheonexiumalfire()),
+    Quetzalcoatl(new Quetzalcoatl()),
     SHAMBLINGZOMBIE(new ShamblingZombie()),
     SKELETOR(new Skeletor()),
     KRAKEN(new Kraken()),
     VAMPIRE(new Vampire()),
     CARTMAN(new Cartman());
-
 
     /*
      * Enums can actually have a constructor
