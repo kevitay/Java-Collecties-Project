@@ -19,15 +19,14 @@ public class FrozenWaffleTests {
 
     @Test
     public void shouldHaveTheRightName() {
-        assertEquals("Frozen waffle without any side dishes", frozenwaffle.getName());
+        assertEquals("Frozen waffle without any side dishes (2)", frozenwaffle.getName());
     }
 
     @Test
     public void shouldHave2SlicesToConsume() {
 
         assertFalse(frozenwaffle.consume());
-        assertFalse(frozenwaffle.consume());
-        assertTrue(pizza.consume());
+        assertTrue(frozenwaffle.consume());
     }
 
 }
