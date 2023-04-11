@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -21,6 +22,12 @@ public class FrozenWaffleTests {
         assertEquals("Frozen waffle without any side dishes", frozenwaffle.getName());
     }
 
+    @Test
+    public void shouldHave2SlicesToConsume() {
 
+        assertFalse(frozenwaffle.consume());
+        assertFalse(frozenwaffle.consume());
+        assertTrue(pizza.consume());
+    }
 
 }
