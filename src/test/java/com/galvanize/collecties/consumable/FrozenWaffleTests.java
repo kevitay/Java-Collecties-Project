@@ -29,4 +29,10 @@ public class FrozenWaffleTests {
         assertTrue(frozenwaffle.consume());
     }
 
+    @Test
+    public void shouldShowSliceCountInName() {
+        assertTrue(frozenwaffle.getName().contains("(2)"));
+        frozenwaffle.consume();
+        assertTrue(frozenwaffle.getName().contains("(1)"));
+    }
 }
