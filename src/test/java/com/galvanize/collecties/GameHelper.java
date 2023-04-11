@@ -49,14 +49,14 @@ public class GameHelper {
         Printer printer = new Printer(printStream);
         Scanner scanner = new Scanner(inputStream);
         Prompt prompt = new Prompt(scanner, printer);
-        Game game = new Game(printer, prompt);
-        if(testMode) {
-            printer.disableSleep();
-        }
         if(GameHelper.fakeRandom != null) {
             GameHelper.originalRandom = Game.randogen;
             Game.randogen = fakeRandom;
         }
+        if(testMode) {
+            printer.disableSleep();
+        }
+        Game game = new Game(printer, prompt);
         game.start();
         if(GameHelper.fakeRandom != null) {
             System.out.println(fakeRandom.getGeneratedValues());

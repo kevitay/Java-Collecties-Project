@@ -1,6 +1,8 @@
 package com.galvanize.collecties;
 
+import com.galvanize.collecties.collectie.Collectie;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -9,6 +11,11 @@ import java.util.*;
 import static com.galvanize.collecties.GameHelper.*;
 
 public class GameTests {
+
+    @BeforeAll
+    public static void setupOnce() {
+        Collectie.buildSpeciesBiomeMap();
+    }
 
     @BeforeEach
     public void setup() {
@@ -56,7 +63,6 @@ public class GameTests {
 
     @Test
     public void attemptToFeedCollectieWithNoConsumables() {
-        hookIntoRandom();
         String output = runGameWithInput("y", "Rextor", "y", "3", "3", "1", "6", "4");
         displayOutputLines(output);
         Assertions.assertEquals("?: You have no consumables to feed Rextor!", output.split(System.lineSeparator())[26]);
@@ -64,11 +70,21 @@ public class GameTests {
 
     @Test
     public void collectConsumable() {
-        hookIntoRandom("[284789078, 57, 4]");
+        hookIntoRandom("[1, 10001, 51, 0, 1, 10]");
         disableGameSleep();
         String output = runGameWithInput("n", "2", "4");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("You found a A fire roasted Phoenix wing (3) while exploring.", output.split(System.lineSeparator())[14]);
+        Assertions.assertEquals("You found a Questionable Mushroom while exploring.", output.split(System.lineSeparator())[14]);
+    }
+
+    @Test
+    public void fightCollectie() {
+        hookIntoRandom("[1, 10001, 1, 0, 1, 10]");
+        disableGameSleep();
+        String output = runGameWithInput("n", "2", "1", "n", "4");
+        enableGameSleep();
+        displayOutputLines(output);
+        Assertions.assertEquals("Would you like to capture the wild Flukoguin?", output.split(System.lineSeparator())[45]);
     }
 }
