@@ -25,6 +25,6 @@ public class Dinghy implements Consumable {
 
     @Override
     public Biome getContainingBiome() {
-        return Biome.OCEANIC;
+        return Biome.PLAINS;
     }
 }
