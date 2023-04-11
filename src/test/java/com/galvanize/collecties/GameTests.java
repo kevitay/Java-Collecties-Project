@@ -79,12 +79,34 @@ public class GameTests {
     }
 
     @Test
-    public void fightCollectie() {
-        hookIntoRandom("[1, 10001, 1, 0, 1, 10]");
+    public void fightCollectieAndWin() {
+        hookIntoRandom("[11, 10001, 1, 0, 1, 11]");
         disableGameSleep();
         String output = runGameWithInput("n", "2", "1", "n", "4");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("Would you like to capture the wild Flukoguin?", output.split(System.lineSeparator())[45]);
+        Assertions.assertEquals("Would you like to capture the wild Rextore?", output.split(System.lineSeparator())[50]);
+    }
+
+    @Test
+    public void bothMiss() {
+        hookIntoRandom("[11, 10001, 1, 0, 1, 51, 51]");
+        disableGameSleep();
+        String output = runGameWithInput("n", "2", "1", "4");
+        enableGameSleep();
+        displayOutputLines(output);
+        Assertions.assertEquals("The wild Rextore manages to survive the blow!", output.split(System.lineSeparator())[49]);
+        Assertions.assertEquals("Rextore 10001 survives the blow!", output.split(System.lineSeparator())[52]);
+    }
+
+    @Test
+    public void fightWithMissThenGetHit() {
+        hookIntoRandom("[11, 10001, 1, 0, 1, 51, 1]");
+        disableGameSleep();
+        String output = runGameWithInput("n", "2", "1", "4");
+        enableGameSleep();
+        displayOutputLines(output);
+        Assertions.assertEquals("The wild Rextore manages to survive the blow!", output.split(System.lineSeparator())[49]);
+        Assertions.assertEquals("Rextore 10001 has fallen!", output.split(System.lineSeparator())[52]);
     }
 }
