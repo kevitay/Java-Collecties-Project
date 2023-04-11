@@ -24,13 +24,12 @@ public enum Consumables {
   KONA_COFFEE(new KonaCoffee()),
   BANANAS(new Bananas()),
   SPINACH(new Spinach()),
+  FROZEN_WAFFLE (new FrozenWaffle()),
   SUGAR_CUBE(new SugarCube()),
   MILK(new Milk()),
   FINGERFOOD(new FingerFood()),
   TRUBLOOD(new TruBlood()),
   DINGHY (new Dinghy());
-
-
 
 
   // Create a static array of all the Consumables
