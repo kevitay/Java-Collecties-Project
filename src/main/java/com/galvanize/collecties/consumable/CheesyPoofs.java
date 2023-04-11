@@ -1,9 +1,11 @@
 package com.galvanize.collecties.consumable;
 
 public class CheesyPoofs implements Consumable{
+
+    Integer poofs = 15;
     @Override
     public String getName() {
-        return null;
+        return String.format("CheesyPoofs (%d)", poofs);
     }
 
     @Override
