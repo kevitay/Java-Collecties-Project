@@ -20,6 +20,6 @@ public class CheesyPoofs implements Consumable{
 
     @Override
     public Consumable clone() {
-        return null;
+        return new CheesyPoofs();
     }
 }

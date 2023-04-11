@@ -49,5 +49,11 @@ public class CheesyPoofsTest {
         assertTrue(cheesyPoofs.consume());
     }
 
-
+    @Test
+    public void shouldUpdateCheesyPoofCountInName() {
+        assertTrue(cheesyPoofs.getName().contains("(15)"));
+        cheesyPoofs.consume();
+        cheesyPoofs.consume();
+        assertTrue(cheesyPoofs.getName().contains("(13)"));
+    }
 }
