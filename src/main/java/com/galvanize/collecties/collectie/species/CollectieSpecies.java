@@ -28,7 +28,11 @@ public enum CollectieSpecies {
     FLUKOGUIN(new Flukoguin()),
     TRICERATOPS(new Triceratops()),
     Quetzalcoatl(new Quetzalcoatl()),
-    GALVA(new Galva());
+    GALVA(new Galva()),
+    SHAMBLINGZOMBIE(new ShamblingZombie()),
+    SKELETOR(new Skeletor()),
+    KRAKEN(new Kraken()),
+    VAMPIRE(new Vampire());
 
     /*
      * Enums can actually have a constructor
