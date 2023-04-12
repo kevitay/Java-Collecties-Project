@@ -80,7 +80,7 @@ public class Encounter {
       // Attacks on Run
       // add a 50% chance that the opponent will get an "attack of opportunity"
       // when the player runs from an encounter
-      if (attackOfOpportunityLaunched()) {
+      if (isAttackOfOpportunityLaunched()) {
         // attackOfOpportunity returns true if the player survives
         attackOfOpportunity();
       } else {
@@ -94,8 +94,8 @@ public class Encounter {
   }
 
   // this gives us the random chance of an attack of opportunity
-  public boolean attackOfOpportunityLaunched() {
-    if(Math.random()*1000 > 500) {
+  public boolean isAttackOfOpportunityLaunched() {
+    if(Game.randogen.nextInt(1000) > 500) {
       return true;
     } else {
       return false;

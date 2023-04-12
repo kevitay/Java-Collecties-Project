@@ -4,7 +4,6 @@ import com.galvanize.collecties.collectie.Collectie;
 import com.galvanize.collecties.collectie.species.Yeti;
 import com.galvanize.collecties.utils.terminal.Printer;
 import com.galvanize.collecties.utils.terminal.Prompt;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -60,7 +59,7 @@ public class EncounterTests {
         runEncounterWithInput("");
         int attacks = 0;
         for (int i = 0; i < 1000; i++) {
-            if(encounter.attackOfOpportunityLaunched()) attacks++;
+            if(encounter.isAttackOfOpportunityLaunched()) attacks++;
         }
         System.out.println("Attacks of Opportunity: " + attacks);
         assertTrue(attacks > 450 && attacks < 550);
