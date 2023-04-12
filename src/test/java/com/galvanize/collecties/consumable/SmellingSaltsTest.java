@@ -15,7 +15,7 @@ public class SmellingSaltsTest {
 
     @Test
     public void shouldHaveTheRightFood() {
-        Assertions.assertEquals("Smelling Salts will get you back into the fight!", smellingSalt.getName());
+        Assertions.assertEquals("Smelling Salts (that will get you back into the fight)", smellingSalt.getName());
     }
 
     @Test

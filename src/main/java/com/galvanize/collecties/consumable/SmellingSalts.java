@@ -5,7 +5,7 @@ public class SmellingSalts implements Consumable {
     private int bites = 1;
     @Override
     public String getName() {
-        return "Smelling Salts will get you back into the fight!";
+        return "Smelling Salts (that will get you back into the fight)";
     }
 
     @Override
