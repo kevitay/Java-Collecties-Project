@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -32,6 +33,12 @@ public class BananasTests {
         assertTrue(banana.getName().contains("(6)"));
         banana.consume();
         assertTrue(banana.getName().contains("(5)"));
+    }
+
+    @Test
+    public void shouldReturnBiomeForBananasConsumable() {
+        Bananas banana = new Bananas();
+        assertEquals(Biome.RAINFOREST, banana.getContainingBiome());
     }
 
 
