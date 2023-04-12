@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -25,5 +26,11 @@ public class EnergyDrinkTests {
   @Test
   public void shouldOnlyHaveOneUsage() {
     assertTrue(drink.consume());
+  }
+
+  @Test
+  public void shouldReturnBiomeForConsumable() {
+    EnergyDrink item = new EnergyDrink();
+    assertEquals(Biome.TUNDRA, item.getContainingBiome());
   }
 }

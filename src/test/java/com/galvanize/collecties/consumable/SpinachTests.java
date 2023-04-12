@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -32,5 +33,11 @@ public class SpinachTests {
         assertTrue(spinach.getName().contains("(2)"));
         spinach.consume();
         assertTrue(spinach.getName().contains("(1)"));
+    }
+
+    @Test
+    public void shouldReturnBiomeForConsumable() {
+        Spinach item = new Spinach();
+        assertEquals(Biome.MOUNTAIN_RANGE, item.getContainingBiome());
     }
 }

@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -25,6 +26,12 @@ public class AnabolicSteroidsTests {
     @Test
     public void shouldOnlyHaveOneUsage() {
         assertTrue(steroids.consume());
+    }
+
+    @Test
+    public void shouldReturnBiomeForConsumable() {
+        AnabolicSteroids item = new AnabolicSteroids();
+        assertEquals(Biome.VOLCANIC, item.getContainingBiome());
     }
 
 }
