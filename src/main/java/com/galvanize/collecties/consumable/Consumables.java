@@ -65,11 +65,6 @@ public enum Consumables {
     return null;
   }
 
-
-
-
-
-
   /*
    * Enums can actually have a constructor
    * and instance data/methods. In this case

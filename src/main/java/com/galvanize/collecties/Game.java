@@ -10,6 +10,8 @@ import com.galvanize.collecties.utils.terminal.Prompt;
 import java.util.Random;
 import java.util.Scanner;
 
+import static java.util.Objects.isNull;
+
 
 /*
  * Quite literally the "main" class.
@@ -198,7 +200,7 @@ public class Game {
     Consumable foundConsumable = Consumables.getRandomConsumable(currentBiome);
 
 
-    if(foundConsumable == null){
+    if(isNull(foundConsumable)){
       printer.multiline(
                       "No consumable found in %s biome."
               )
