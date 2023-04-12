@@ -1,7 +1,10 @@
 package com.galvanize.collecties;
 
 import com.galvanize.collecties.collectie.Collectie;
+import com.galvanize.collecties.collectie.CollectieStatus;
 import com.galvanize.collecties.consumable.Consumable;
+import com.galvanize.collecties.consumable.Consumables;
+import com.galvanize.collecties.consumable.SmellingSalts;
 import com.galvanize.collecties.utils.terminal.Printer;
 import com.galvanize.collecties.utils.terminal.Prompt;
 
@@ -219,6 +222,12 @@ public class CollectieManager {
       return;
     }
 
+    if(collectieToFeed.getCollectieStatus().equals(CollectieStatus.UNCONSCIOUS)) {
+      printer.print(
+              "%s is unconscious and needs smelling salts!",
+              collectieToFeed.getName());
+    }
+
     printer.print(
       "Choose a consumable to give to %s:",
       collectieToFeed.getName());
@@ -234,6 +243,14 @@ public class CollectieManager {
       consumable.getName());
 
     //Prompt.fakeWait(3);
+
+    if (collectieToFeed.getCollectieStatus().equals(CollectieStatus.UNCONSCIOUS) && consumable instanceof SmellingSalts) {
+      collectieToFeed.setCollectieStatus(CollectieStatus.CONSCIOUS);
+      printer.print(
+              "%s has sniffed the salt and regains consciousness!",
+              collectieToFeed.getName()
+      );
+    }
 
     // Consumable.consume() returns true if the it was finished on that call
     if(consumable.consume()) {
