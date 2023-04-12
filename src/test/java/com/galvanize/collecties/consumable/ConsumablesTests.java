@@ -12,6 +12,7 @@ public class ConsumablesTests {
   @Test
   public void shouldBeAbleToGetRandomConsumableThatMatchesBiome() {
     Consumable consumable = Consumables.getRandomConsumable(Biome.MOUNTAIN_RANGE);
+    assertNotNull(consumable);
     assertEquals(Biome.MOUNTAIN_RANGE, consumable.getContainingBiome());
   }
 

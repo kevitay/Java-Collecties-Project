@@ -52,7 +52,7 @@ public enum Consumables {
   public static Consumable getRandomConsumable(Biome biome) {
     List<Consumable> foundConsumables = new ArrayList<>();
     for (int i = 0; i < consumablesArray.length; i++) {
-      if(biome == consumablesArray[i].getReference().getContainingBiome()){
+      if(biome.equals(consumablesArray[i].getReference().getContainingBiome())){
         foundConsumables.add(consumablesArray[i].getReference().clone());
       }
     }

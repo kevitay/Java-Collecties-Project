@@ -22,7 +22,7 @@ public class Spinach implements Consumable {
 
     @Override
     public Consumable clone() {
-        return null;
+        return new Spinach();
     }
 
     @Override
