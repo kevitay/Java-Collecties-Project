@@ -79,8 +79,8 @@ public class Encounter {
     } else {
       // Attacks on Run
       // add a 50% chance that the opponent will get an "attack of opportunity"
-      // when the player runs from an encounter
-      if (isAttackOfOpportunityLaunched()) {
+      // when the player runs from an encounter and is conscious
+      if (isAttackOfOpportunityLaunched() && challenger.getCollectieStatus().equals(CollectieStatus.CONSCIOUS)) {
         // attackOfOpportunity returns true if the player survives
         attackOfOpportunity();
       } else {
@@ -119,7 +119,7 @@ public class Encounter {
       printer.print("?: You cheese it the heckin' out of there.");
       return true;
     } else {
-
+      challenger.setCollectieStatus(CollectieStatus.UNCONSCIOUS);
       printer.multiline(
                       "", //Add space before
                       "%s has fallen!"

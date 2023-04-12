@@ -85,7 +85,7 @@ public class EncounterTests {
 
         ByteArrayOutputStream output = runEncounterWithInput("1\n", biome, randomCollectie);
         encounter.start();
-        displayOutputLines(output.toString());
+    //    displayOutputLines(output.toString());
         String[] outputResult = output.toString().split(System.lineSeparator());
 
         assertEquals("?: You cheese it the heckin' out of there.", outputResult[outputResult.length - 1]);
