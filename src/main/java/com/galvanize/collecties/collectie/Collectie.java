@@ -98,6 +98,7 @@ public abstract class Collectie {
   private final CollectieType type;
   private String name;
   private final String sound;
+  private CollectieStatus collectieStatus = CollectieStatus.CONSCIOUS;
 
   /*
    * Basic constructor except all Collecties start with a
@@ -109,6 +110,13 @@ public abstract class Collectie {
     this.sound = sound;
   }
 
+  public CollectieStatus getCollectieStatus() {
+    return this.collectieStatus;
+  }
+
+  public void setCollectieStatus(CollectieStatus status) {
+    this.collectieStatus = status;
+  }
   /*
    * Use the class name as the species name
    * this works with subclasses even though
@@ -158,4 +166,6 @@ public abstract class Collectie {
   // Clone should be used to return a new instance of the child class
   // IE myRextore.clone() != myRextore and rexClone is a Rextore instance
   public abstract Collectie clone();
+
+
 }

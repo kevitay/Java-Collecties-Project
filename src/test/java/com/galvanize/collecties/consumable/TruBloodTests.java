@@ -20,7 +20,7 @@ public class TruBloodTests {
 
     @Test
     public void shouldHaveCorrectName() {
-        Assertions.assertEquals("You quench your thirst for blood with a pint of TruBlood.", drink.getName());
+        Assertions.assertEquals("pint of TruBlood", drink.getName());
     }
 
     @Test

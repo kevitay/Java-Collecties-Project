@@ -79,7 +79,28 @@ public class GameTests {
         String output = runGameWithInput("n", "2", "4");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("You found a You quench your thirst for blood with a pint of TruBlood. while exploring.", output.split(System.lineSeparator())[14]);
+        Assertions.assertEquals("You found a Smelling Salts (that will get you back into the fight) while exploring.", output.split(System.lineSeparator())[14]);
+    }
+
+    @Test
+    public void awakenWithSmellingSalts() {
+        // 8 - Oceanic is picked as BIOME
+        // 10001 - Random number given to first Collectie
+        // 51 - Exploring goes to findConsumable logic
+        // 0 - Finds first Consumable in this BIOME (should be smelling salts)
+        // 1 - Exploring goes to encounter logic
+        // 0 - Finds first Collectie in this BIOME
+        // 10002 - Random number given to cloned Collectie
+        // 51 - our Rextore misses
+        // 1 - other Rextore hits
+        hookIntoRandom("[8, 10001, 51, 0, 1, 0, 10002, 51, 1]");
+        disableGameSleep();
+        //don't rename, explore (find item), explore (encounter), attack, manage collections, use item,first collectie, first item
+        String output = runGameWithInput("n", "2", "2", "1", "3", "3", "1", "1", "6", "4");
+        enableGameSleep();
+        displayOutputLines(output.toString());
+        String[] outputResult = output.toString().split(System.lineSeparator());
+        Assertions.assertTrue(outputResult[outputResult.length - 17].contains("has sniffed the salt and regains consciousness"));
     }
 
     @Test

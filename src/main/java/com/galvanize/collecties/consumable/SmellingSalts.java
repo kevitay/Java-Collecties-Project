@@ -2,12 +2,12 @@ package com.galvanize.collecties.consumable;
 
 import com.galvanize.collecties.Biome;
 
-public class Dinghy implements Consumable {
+public class SmellingSalts implements Consumable {
 
-    private int bites = 2;
+    private int bites = 1;
     @Override
     public String getName() {
-        return String.format("chunk of a dinghy (%d)", this.bites);
+        return "Smelling Salts (that will get you back into the fight)";
     }
 
     @Override
@@ -19,12 +19,12 @@ public class Dinghy implements Consumable {
     }
 
     @Override
-    public Consumable clone() {
-        return new Dinghy();
-    }
+        public Consumable clone() {
+            return new SmellingSalts();
+        }
 
     @Override
     public Biome getContainingBiome() {
-        return Biome.PLAINS;
+        return Biome.OCEANIC;
     }
 }

@@ -20,14 +20,13 @@ public enum Consumables {
   // a reference instance of the class
   // it represents
   // CONSUMABLE(new Consumable()) / KEY(VALUE)
+  SMELLING_SALTS(new SmellingSalts()), //Needs to be first for unconscious tests
   QUESTIONABLE_MUSHROOM(new QuestionableMushroom()),
   ENERGY_DRINK(new EnergyDrink()),
   PIZZA(new Pizza()),
   COFFEE_DRINK(new CoffeeDrink()),
   KONA_COFFEE(new KonaCoffee()),
-
   VEGAN_HOTDOGS(new VeganHotdogs()),
-
   ANABOLICSTEROIDS(new AnabolicSteroids()),
   PHOENIXWING(new PhoenixWing()),
   NIBBLETS(new Nibblets()),

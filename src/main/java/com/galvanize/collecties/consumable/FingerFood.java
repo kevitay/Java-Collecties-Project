@@ -9,7 +9,7 @@ public class FingerFood implements Consumable {
     @Override
     public String getName() {
         return String.format(
-                "You enjoy a delicious finger food (%d)",fingers);
+                "platter of finger foods (%d)",fingers);
     }
 
     @Override
