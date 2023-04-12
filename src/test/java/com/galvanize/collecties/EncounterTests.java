@@ -62,13 +62,15 @@ public class EncounterTests {
         //setup
         Dodud duddy = new Dodud();
         Biome biome = Collectie.getRandomNonEmptyBiome();
-
-        //execution
-        ByteArrayOutputStream output = runEncounterWithInput("1\n", biome, duddy); //ATTACK!
-        encounter.start();
-//        displayOutputLines(output.toString());
-//        String[] outputResult = output.toString().split(System.lineSeparator());
-//        System.out.println(outputResult);
+        String[] outputResult;
+        do {
+            //execution
+            ByteArrayOutputStream output = runEncounterWithInput("1\nn\n", biome, duddy); //ATTACK!
+            encounter.start();
+            displayOutputLines(output.toString());
+            outputResult = output.toString().split(System.lineSeparator());
+            //System.out.println(outputResult);
+            } while (outputResult[outputResult.length - 2].contains("Would you like to capture the wild"));
         //assertion
         assertEquals(CollectieStatus.UNCONSCIOUS, duddy.getCollectieStatus());
     }
