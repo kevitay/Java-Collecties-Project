@@ -197,12 +197,21 @@ public class Game {
   private void findConsumable() {
     Consumable foundConsumable = Consumables.getRandomConsumable(currentBiome);
 
-    collection.addConsumable(foundConsumable);
 
-    printer.multiline(
-      "You found a %s while exploring.",
-      "It has been added to your consumables."
-    )
-    .print(foundConsumable.getName());
+    if(foundConsumable == null){
+      printer.multiline(
+                      "No consumable found in %s biome."
+              )
+              .print(currentBiome);
+    } else {
+      collection.addConsumable(foundConsumable);
+
+      printer.multiline(
+                      "You found a %s while exploring.",
+                      "It has been added to your consumables."
+              )
+              .print(foundConsumable.getName());
+    }
+
   }
 }
