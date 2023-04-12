@@ -73,8 +73,8 @@ public class GameTests {
         // 8 - Oceanic is picked as BIOME
         // 10001 - Random number given to first Collectie
         // 51 - Exploring goes to findConsumable logic
-        // 16 - Finds the Consumable in this BIOME
-        hookIntoRandom("[8, 10001, 51, 16]");
+        // 0 - Finds the Consumable in this BIOME
+        hookIntoRandom("[8, 10001, 51, 0]");
         disableGameSleep();
         String output = runGameWithInput("n", "2", "4");
         enableGameSleep();
