@@ -96,13 +96,11 @@ public class GameTests {
         hookIntoRandom("[11, 10001, 51, 0, 1, 0, 10002, 51, 1]");
         disableGameSleep();
         //don't rename, explore (find item), explore (encounter), attack, manage collections, use item,first collectie, first item
-        String output = runGameWithInput("n", "2", "2", "1", "3", "3", "1", "1", "4");
+        String output = runGameWithInput("n", "2", "2", "1", "3", "3", "1", "1", "6", "4");
         enableGameSleep();
         displayOutputLines(output.toString());
         String[] outputResult = output.toString().split(System.lineSeparator());
-        //Assertions.assertEquals("The wild Rextore manages to survive the blow!", output.split(System.lineSeparator())[49]);
-        //Assertions.assertEquals("Rextore 10001 has fallen!", output.split(System.lineSeparator())[52]);
-        Assertions.assertTrue(outputResult[outputResult.length - 8].contains("has sniffed the salt and regains consciousness"));
+        Assertions.assertTrue(outputResult[outputResult.length - 17].contains("has sniffed the salt and regains consciousness"));
     }
 
     @Test
