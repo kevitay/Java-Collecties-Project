@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -55,5 +56,11 @@ public class CheesyPoofsTest {
         cheesyPoofs.consume();
         cheesyPoofs.consume();
         assertTrue(cheesyPoofs.getName().contains("(13)"));
+    }
+
+    @Test
+    public void shouldReturnBiomeForConsumable() {
+        CheesyPoofs item = new CheesyPoofs();
+        assertEquals(Biome.BEACH, item.getContainingBiome());
     }
 }
