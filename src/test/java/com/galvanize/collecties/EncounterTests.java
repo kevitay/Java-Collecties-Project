@@ -82,9 +82,9 @@ public class EncounterTests {
         //execution
         ByteArrayOutputStream output = runEncounterWithInput("1\n", biome, duddy); //ATTACK!
         encounter.start();
-        displayOutputLines(output.toString());
-        String[] outputResult = output.toString().split(System.lineSeparator());
-        System.out.println(outputResult);
+//        displayOutputLines(output.toString());
+//        String[] outputResult = output.toString().split(System.lineSeparator());
+//        System.out.println(outputResult);
         //assertion
         assertEquals(CollectieStatus.UNCONSCIOUS, duddy.getCollectieStatus());
     }

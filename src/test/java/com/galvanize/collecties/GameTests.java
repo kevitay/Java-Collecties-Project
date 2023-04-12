@@ -79,7 +79,7 @@ public class GameTests {
         String output = runGameWithInput("n", "2", "4");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("You found a Questionable Mushroom while exploring.", output.split(System.lineSeparator())[14]);
+        Assertions.assertEquals("You found a Smelling Salts will get you back into the fight! while exploring.", output.split(System.lineSeparator())[14]);
     }
 
     @Test
