@@ -77,17 +77,57 @@ public class Encounter {
         return prompt.getYesNo();
       }
     } else {
-      printer.print("You cheese it the heckin' out of there.");
       // Attacks on Run
       // add a 50% chance that the opponent will get an "attack of opportunity"
       // when the player runs from an encounter
-
-
+      if (isAttackOfOpportunityLaunched()) {
+        // attackOfOpportunity returns true if the player survives
+        attackOfOpportunity();
+      } else {
+        printer.print("You cheese it the heckin' out of there.");
+      }
     }
 
     // If you lose (or run) you cannot keep the wild Collectie
     // So false is returned for those cases
     return false;
+  }
+
+  // this gives us the random chance of an attack of opportunity
+  public boolean isAttackOfOpportunityLaunched() {
+    if(Game.randogen.nextInt(1000) > 500) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  // Attack of Opportunity
+  // As we're running away, we have to defend an attack
+  private boolean attackOfOpportunity() {
+    printer.print(
+            "The wild %s attacks %s as you run away!",
+            opponent.getSpecies(),
+            challenger.getName()
+    );
+    if (challenger.defend(opponent.performAttack())) {
+      printer.multiline(
+                      "", //Add space before
+                      "%s survives the blow!"
+              )
+              .print(challenger.getName());
+      printer.print("?: You cheese it the heckin' out of there.");
+      return true;
+    } else {
+
+      printer.multiline(
+                      "", //Add space before
+                      "%s has fallen!"
+              )
+              .print(challenger.getName());
+      printer.print("?: You cheese it the heckin' out of there.");
+      return false;
+    }
   }
 
   /*
