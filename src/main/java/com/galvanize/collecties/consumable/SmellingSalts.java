@@ -1,5 +1,7 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
+
 public class SmellingSalts implements Consumable {
 
     private int bites = 1;
@@ -20,4 +22,9 @@ public class SmellingSalts implements Consumable {
         public Consumable clone() {
             return new SmellingSalts();
         }
+
+    @Override
+    public Biome getContainingBiome() {
+        return Biome.OCEANIC;
+    }
 }

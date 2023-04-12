@@ -1,5 +1,7 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
+
 public class CoffeeDrink implements Consumable{
 
 
@@ -15,5 +17,10 @@ public class CoffeeDrink implements Consumable{
     @Override
     public Consumable clone() {
         return new CoffeeDrink();
+    }
+
+    @Override
+    public Biome getContainingBiome(){
+        return Biome.TUNDRA;
     }
 }

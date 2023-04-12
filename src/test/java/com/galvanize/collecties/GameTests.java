@@ -70,11 +70,11 @@ public class GameTests {
 
     @Test
     public void collectConsumable() {
-        // 1 - Taiga is picked as BIOME
+        // 8 - Oceanic is picked as BIOME
         // 10001 - Random number given to first Collectie
         // 51 - Exploring goes to findConsumable logic
-        // 0 - Finds first Consumable in this BIOME
-        hookIntoRandom("[1, 10001, 51, 0]");
+        // 0 - Finds the Consumable in this BIOME
+        hookIntoRandom("[8, 10001, 51, 0]");
         disableGameSleep();
         String output = runGameWithInput("n", "2", "4");
         enableGameSleep();
@@ -84,7 +84,7 @@ public class GameTests {
 
     @Test
     public void awakenWithSmellingSalts() {
-        // 11 - VOLCANIC is picked as BIOME
+        // 8 - Oceanic is picked as BIOME
         // 10001 - Random number given to first Collectie
         // 51 - Exploring goes to findConsumable logic
         // 0 - Finds first Consumable in this BIOME (should be smelling salts)
@@ -93,7 +93,7 @@ public class GameTests {
         // 10002 - Random number given to cloned Collectie
         // 51 - our Rextore misses
         // 1 - other Rextore hits
-        hookIntoRandom("[11, 10001, 51, 0, 1, 0, 10002, 51, 1]");
+        hookIntoRandom("[8, 10001, 51, 0, 1, 0, 10002, 51, 1]");
         disableGameSleep();
         //don't rename, explore (find item), explore (encounter), attack, manage collections, use item,first collectie, first item
         String output = runGameWithInput("n", "2", "2", "1", "3", "3", "1", "1", "6", "4");
@@ -102,6 +102,21 @@ public class GameTests {
         String[] outputResult = output.toString().split(System.lineSeparator());
         Assertions.assertTrue(outputResult[outputResult.length - 17].contains("has sniffed the salt and regains consciousness"));
     }
+
+    @Test
+    public void noConsumableAvail() {
+        // 7 - Bog is picked as BIOME, no consumable is avail here
+        // 10001 - Random number given to first Collectie
+        // 51 - Exploring goes to findConsumable logic
+        // 0 - Finds first Consumable in this BIOME
+        hookIntoRandom("[7, 10001, 51, 0]");
+        disableGameSleep();
+        String output = runGameWithInput("n", "2", "4");
+        enableGameSleep();
+        displayOutputLines(output);
+        Assertions.assertEquals("No consumable found in BOG biome.", output.split(System.lineSeparator())[14]);
+    }
+
 
     @Test
     public void fightCollectieAndWin() {

@@ -1,6 +1,10 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import com.galvanize.collecties.Game;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  * This enum is used as a master list for all consumables
@@ -44,10 +48,21 @@ public enum Consumables {
   /*
    * Use the consumables array to easily get a random consumable
    */
-  public static Consumable getRandomConsumable() {
-    return consumablesArray[Game.randogen.nextInt(consumablesArray.length)]
-      .getReference()
-      .clone();
+  public static Consumable getRandomConsumable(Biome biome) {
+    List<Consumable> foundConsumables = new ArrayList<>();
+    for (int i = 0; i < consumablesArray.length; i++) {
+      if(biome.equals(consumablesArray[i].getReference().getContainingBiome())){
+        foundConsumables.add(consumablesArray[i].getReference().clone());
+      }
+    }
+    if(foundConsumables.size() == 0){
+      return null;
+    } else {
+      Consumable randomConsumable = foundConsumables.get(Game.randogen.nextInt(foundConsumables.size()));
+//              .getReference()
+//              .clone();
+      return randomConsumable;
+    }
   }
 
   /*

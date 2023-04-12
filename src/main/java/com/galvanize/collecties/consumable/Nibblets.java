@@ -1,6 +1,8 @@
 package com.galvanize.collecties.consumable;
 
-    public class Nibblets implements Consumable {
+import com.galvanize.collecties.Biome;
+
+public class Nibblets implements Consumable {
         @Override
         public String getName() {
             return "Nibblets";
@@ -15,4 +17,9 @@ package com.galvanize.collecties.consumable;
         public Consumable clone() {
             return new Nibblets();
         }
+
+    @Override
+    public Biome getContainingBiome() {
+        return Biome.WOODLAND;
+    }
     }

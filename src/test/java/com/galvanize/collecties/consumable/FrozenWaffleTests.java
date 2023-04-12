@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -34,5 +35,11 @@ public class FrozenWaffleTests {
         assertTrue(frozenwaffle.getName().contains("(2)"));
         frozenwaffle.consume();
         assertTrue(frozenwaffle.getName().contains("(1)"));
+    }
+
+    @Test
+    public void shouldReturnBiomeForConsumable() {
+        FrozenWaffle item = new FrozenWaffle();
+        assertEquals(Biome.MOUNTAIN_RANGE, item.getContainingBiome());
     }
 }

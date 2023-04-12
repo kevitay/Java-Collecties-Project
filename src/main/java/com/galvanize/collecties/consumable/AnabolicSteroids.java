@@ -1,5 +1,7 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
+
 public class AnabolicSteroids implements Consumable{
 
 
@@ -16,5 +18,10 @@ public class AnabolicSteroids implements Consumable{
     @Override
     public Consumable clone()  {
         return new AnabolicSteroids();
+    }
+
+    @Override
+    public Biome getContainingBiome() {
+        return Biome.VOLCANIC;
     }
 }

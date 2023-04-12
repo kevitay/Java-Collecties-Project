@@ -10,6 +10,8 @@ import com.galvanize.collecties.utils.terminal.Prompt;
 import java.util.Random;
 import java.util.Scanner;
 
+import static java.util.Objects.isNull;
+
 
 /*
  * Quite literally the "main" class.
@@ -195,14 +197,23 @@ public class Game {
    * Get a random consumable and add it to the inventory
    */
   private void findConsumable() {
-    Consumable foundConsumable = Consumables.getRandomConsumable();
+    Consumable foundConsumable = Consumables.getRandomConsumable(currentBiome);
 
-    collection.addConsumable(foundConsumable);
 
-    printer.multiline(
-      "You found a %s while exploring.",
-      "It has been added to your consumables."
-    )
-    .print(foundConsumable.getName());
+    if(isNull(foundConsumable)){
+      printer.multiline(
+                      "No consumable found in %s biome."
+              )
+              .print(currentBiome);
+    } else {
+      collection.addConsumable(foundConsumable);
+
+      printer.multiline(
+                      "You found a %s while exploring.",
+                      "It has been added to your consumables."
+              )
+              .print(foundConsumable.getName());
+    }
+
   }
 }

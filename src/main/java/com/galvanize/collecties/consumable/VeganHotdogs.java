@@ -1,5 +1,7 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
+
 public class VeganHotdogs implements Consumable{
 
     private int veganHotdogs = 2;
@@ -22,5 +24,8 @@ public class VeganHotdogs implements Consumable{
     }
 
 
-
+    @Override
+    public Biome getContainingBiome(){
+        return Biome.MOUNTAIN_RANGE;
+    }
 }

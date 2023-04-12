@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import com.galvanize.collecties.collectie.species.Triceratops;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -39,5 +40,11 @@ public class SugarCubeTests {
     public void shouldNewSugarOnClone() {
         Consumable clone = sugar.clone();
         assertNotEquals(clone, sugar);
+    }
+
+    @Test
+    public void shouldReturnBiomeForConsumable() {
+        SugarCube item = new SugarCube();
+        assertEquals(Biome.SAVANNA, item.getContainingBiome());
     }
 }

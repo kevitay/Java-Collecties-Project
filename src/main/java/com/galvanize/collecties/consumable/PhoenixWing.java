@@ -1,5 +1,7 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
+
 public class PhoenixWing implements Consumable {
 
   private int bites = 3;
@@ -22,5 +24,10 @@ public class PhoenixWing implements Consumable {
   @Override
   public Consumable clone() {
     return new PhoenixWing();
+  }
+
+  @Override
+  public Biome getContainingBiome() {
+    return Biome.TAIGA;
   }
 }

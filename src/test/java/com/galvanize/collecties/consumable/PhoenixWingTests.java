@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -33,5 +34,11 @@ public class PhoenixWingTests {
     assertTrue(wing.getName().contains("(3)"));
     wing.consume();
     assertTrue(wing.getName().contains("(2)"));
+  }
+
+  @Test
+  public void shouldReturnBiomeForConsumable() {
+    PhoenixWing item = new PhoenixWing();
+    assertEquals(Biome.TAIGA, item.getContainingBiome());
   }
 }

@@ -1,4 +1,5 @@
 package com.galvanize.collecties.consumable;
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -25,6 +26,12 @@ public class QuestionableMushroomTest {
     @Test
     public void shouldOnlyHaveOneUsage() {
         assertTrue(mushroom.consume());
+    }
+
+    @Test
+    public void shouldReturnBiomeForConsumable() {
+        QuestionableMushroom item = new QuestionableMushroom();
+        assertEquals(Biome.WOODLAND, item.getContainingBiome());
     }
 }
 
