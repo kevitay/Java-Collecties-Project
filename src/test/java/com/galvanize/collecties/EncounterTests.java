@@ -6,7 +6,6 @@ import com.galvanize.collecties.collectie.species.Dodud;
 import com.galvanize.collecties.collectie.species.Yeti;
 import com.galvanize.collecties.utils.terminal.Printer;
 import com.galvanize.collecties.utils.terminal.Prompt;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -17,8 +16,7 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 import static com.galvanize.collecties.GameHelper.displayOutputLines;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Encounter")
 public class EncounterTests {
@@ -28,20 +26,6 @@ public class EncounterTests {
     Prompt prompt;
     Collectie challenger;
     Biome biome;
-    @BeforeEach
-    public void setup() {
-        // need a printer
-        // need a prompt
-        // need a Collectie challenger
-        // need a biome
-        printer = new Printer();
-        scanner = new Scanner(System.in);
-        prompt = new Prompt(scanner, printer);
-        // pick a collectie for challenger
-        challenger = new Yeti();
-        biome = Biome.PLAINS;
-        encounter = new Encounter(printer, prompt, challenger, biome);
-    }
 
     public ByteArrayOutputStream runEncounterWithInput(String input) {
         InputStream inputStream;
@@ -118,5 +102,16 @@ public class EncounterTests {
         displayOutputLines(output.toString());
         String[] outputResult = output.toString().split(System.lineSeparator());
         assertEquals("?: You cheese it the heckin' out of there.", outputResult[outputResult.length - 1]);
+    }
+
+    @Test
+    public void runAwayWithAttackOfOpportunity() {
+        runEncounterWithInput("");
+        int attacks = 0;
+        for (int i = 0; i < 1000; i++) {
+            if(encounter.isAttackOfOpportunityLaunched()) attacks++;
+        }
+        System.out.println("Attacks of Opportunity: " + attacks);
+        assertTrue(attacks > 450 && attacks < 550);
     }
 }
