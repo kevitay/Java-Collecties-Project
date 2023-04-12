@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -24,5 +25,11 @@ public class KonaCoffeeTests {
     @Test
     public void shouldOnlyHaveOneUsage() {
         assertTrue(coffee.consume());
+    }
+
+    @Test
+    public void shouldReturnBiomeForConsumable() {
+        KonaCoffee item = new KonaCoffee();
+        assertEquals(Biome.VOLCANIC, item.getContainingBiome());
     }
 }

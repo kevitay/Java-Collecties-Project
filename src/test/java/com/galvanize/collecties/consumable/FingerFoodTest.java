@@ -1,9 +1,12 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName("Consumable: Finger Food")
 public class FingerFoodTest {
@@ -33,5 +36,11 @@ public class FingerFoodTest {
         Assertions.assertTrue(food.getName().contains("(4)"));
         food.consume();
         Assertions.assertTrue(food.getName().contains("(3)"));
+    }
+
+    @Test
+    public void shouldReturnBiomeForConsumable() {
+        FingerFood item = new FingerFood();
+        assertEquals(Biome.SAVANNA, item.getContainingBiome());
     }
 }

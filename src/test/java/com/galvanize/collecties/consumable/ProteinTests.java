@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 //com.galvanize.collecties.consumable.Vitamin_I vitamin_i;
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -34,5 +35,11 @@ public class ProteinTests {
             protein.consume();
             assertTrue(protein.getName().contains("(3)"));
         }
+
+    @Test
+    public void shouldReturnBiomeForConsumable() {
+        Protein item = new Protein();
+        assertEquals(Biome.PLAINS, item.getContainingBiome());
+    }
 }
 

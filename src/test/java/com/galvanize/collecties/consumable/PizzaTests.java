@@ -1,5 +1,6 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -34,5 +35,11 @@ public class PizzaTests {
     assertTrue(pizza.getName().contains("(4)"));
     pizza.consume();
     assertTrue(pizza.getName().contains("(3)"));
+  }
+
+  @Test
+  public void shouldReturnBiomeForConsumable() {
+    Pizza item = new Pizza();
+    assertEquals(Biome.VOLCANIC, item.getContainingBiome());
   }
 }

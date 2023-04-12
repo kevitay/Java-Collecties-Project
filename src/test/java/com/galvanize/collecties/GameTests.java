@@ -70,17 +70,32 @@ public class GameTests {
 
     @Test
     public void collectConsumable() {
-        // 1 - Taiga is picked as BIOME
+        // 8 - Oceanic is picked as BIOME
         // 10001 - Random number given to first Collectie
         // 51 - Exploring goes to findConsumable logic
-        // 0 - Finds first Consumable in this BIOME
-        hookIntoRandom("[1, 10001, 51, 0]");
+        // 0 - Finds the Consumable in this BIOME
+        hookIntoRandom("[8, 10001, 51, 0]");
         disableGameSleep();
         String output = runGameWithInput("n", "2", "4");
         enableGameSleep();
         displayOutputLines(output);
-        Assertions.assertEquals("You found a Questionable Mushroom while exploring.", output.split(System.lineSeparator())[14]);
+        Assertions.assertEquals("You found a You quench your thirst for blood with a pint of TruBlood. while exploring.", output.split(System.lineSeparator())[14]);
     }
+
+    @Test
+    public void noConsumableAvail() {
+        // 7 - Bog is picked as BIOME, no consumable is avail here
+        // 10001 - Random number given to first Collectie
+        // 51 - Exploring goes to findConsumable logic
+        // 0 - Finds first Consumable in this BIOME
+        hookIntoRandom("[7, 10001, 51, 0]");
+        disableGameSleep();
+        String output = runGameWithInput("n", "2", "4");
+        enableGameSleep();
+        displayOutputLines(output);
+        Assertions.assertEquals("No consumable found in BOG biome.", output.split(System.lineSeparator())[14]);
+    }
+
 
     @Test
     public void fightCollectieAndWin() {

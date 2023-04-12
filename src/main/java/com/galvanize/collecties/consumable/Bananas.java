@@ -1,5 +1,7 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
+
 public class Bananas implements Consumable {
 
     private int naners = 6;
@@ -21,6 +23,11 @@ public class Bananas implements Consumable {
     @Override
     public Consumable clone() {
         return new Bananas();
+    }
+
+    @Override
+    public Biome getContainingBiome() {
+        return Biome.RAINFOREST;
     }
 
 }

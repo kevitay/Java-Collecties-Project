@@ -1,5 +1,7 @@
 package com.galvanize.collecties.consumable;
 
+import com.galvanize.collecties.Biome;
+
 public class Dinghy implements Consumable {
 
     private int bites = 2;
@@ -19,5 +21,10 @@ public class Dinghy implements Consumable {
     @Override
     public Consumable clone() {
         return new Dinghy();
+    }
+
+    @Override
+    public Biome getContainingBiome() {
+        return Biome.PLAINS;
     }
 }
