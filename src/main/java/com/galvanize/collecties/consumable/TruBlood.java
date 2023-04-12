@@ -3,7 +3,7 @@ package com.galvanize.collecties.consumable;
 public class TruBlood implements Consumable {
     @Override
     public String getName() {
-        return "You quench your thirst for blood with a pint of TruBlood.";
+        return "pint of TruBlood";
     }
 
     @Override

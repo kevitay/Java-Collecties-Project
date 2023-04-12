@@ -17,7 +17,7 @@ public class FingerFoodTest {
 
     @Test
     public void shouldHaveTheRightFood() {
-        Assertions.assertEquals("You enjoy a delicious finger food (4)", food.getName());
+        Assertions.assertEquals("platter of finger foods (4)", food.getName());
     }
 
     @Test

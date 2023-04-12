@@ -5,7 +5,7 @@ public class Dinghy implements Consumable {
     private int bites = 2;
     @Override
     public String getName() {
-        return String.format("You bite off a chunk of a dinghy (%d)", this.bites);
+        return String.format("chunk of a dinghy (%d)", this.bites);
     }
 
     @Override

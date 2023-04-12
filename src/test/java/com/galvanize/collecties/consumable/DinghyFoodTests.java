@@ -17,7 +17,7 @@ public class DinghyFoodTests {
 
     @Test
     public void shouldHaveTheRightFood() {
-        Assertions.assertEquals("You bite off a chunk of a dinghy (2)", food.getName());
+        Assertions.assertEquals("chunk of a dinghy (2)", food.getName());
     }
 
     @Test
