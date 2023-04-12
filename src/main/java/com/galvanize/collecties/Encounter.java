@@ -80,7 +80,7 @@ public class Encounter {
       // Attacks on Run
       // add a 50% chance that the opponent will get an "attack of opportunity"
       // when the player runs from an encounter
-      if (attackOfOpportunityLaunched()) { // add random chance here later
+      if (attackOfOpportunityLaunched()) {
         // attackOfOpportunity returns true if the player survives
         attackOfOpportunity();
       } else {
@@ -93,6 +93,7 @@ public class Encounter {
     return false;
   }
 
+  // this gives us the random chance of an attack of opportunity
   public boolean attackOfOpportunityLaunched() {
     if(Math.random()*1000 > 500) {
       return true;
@@ -101,6 +102,8 @@ public class Encounter {
     }
   }
 
+  // Attack of Opportunity
+  // As we're running away, we have to defend an attack
   private boolean attackOfOpportunity() {
     printer.print(
             "The wild %s attacks %s as you run away!",
