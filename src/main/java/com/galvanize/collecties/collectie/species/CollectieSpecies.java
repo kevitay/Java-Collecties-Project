@@ -24,7 +24,7 @@ public enum CollectieSpecies {
     DODUD(new Dodud()),
     STANLEY(new Stanley()),
     KENNY(new Kenny()),
-    Batman(new Batman()),
+    BATMAN(new Batman()),
     INFERNIA(new Infernia()),
     BOOGIEWOOGIE(new BoogieWoogie()),
     GENGAR(new Gengar()),
@@ -33,12 +33,13 @@ public enum CollectieSpecies {
 
     GALVA(new Galva()),
     PHEONEXIUMALFIRE(new Pheonexiumalfire()),
-    Quetzalcoatl(new Quetzalcoatl()),
+    QUETZALCOATL(new Quetzalcoatl()),
     SHAMBLINGZOMBIE(new ShamblingZombie()),
     SKELETOR(new Skeletor()),
     KRAKEN(new Kraken()),
     VAMPIRE(new Vampire()),
-    CARTMAN(new Cartman());
+    CARTMAN(new Cartman()),
+    YETI(new Yeti());
 
     /*
      * Enums can actually have a constructor
