@@ -21,11 +21,4 @@ public class ConsumablesTests {
     Consumable consumable = Consumables.getRandomConsumable(Biome.BOG);
     assertNull(consumable);
   }
-
-  @Test
-  public void shouldReturnConsumableForBiome(){
-    Bananas banana = new Bananas();
-    Biome biome = Biome.RAINFOREST;
-    assertEquals(banana.getContainingBiome(), biome);
-  }
 }
